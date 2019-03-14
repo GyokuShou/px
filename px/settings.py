@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 
+from px import pxpsd
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -75,14 +77,16 @@ WSGI_APPLICATION = 'px.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
+psd = pxpsd.getpsd()
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'px',
-        'USER': 'gin',
-        'PASSWORD': 'sa',
-        'HOST': 'localhost',
-        'PORT': 3306
+        'NAME': psd['DB'],
+        'USER': psd['USER'],
+        'PASSWORD': psd['PASSWORD'],
+        'HOST': psd['HOST'],
+        'PORT': psd['PORT']
     }
 }
 
