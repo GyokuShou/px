@@ -1,0 +1,2496 @@
+
+/*主体部分开始*/
+
+
+#body_box{
+	width: 100%;
+}
+
+#body{
+	width: 1220px;
+	height: 4370px;
+	margin: 0 auto;
+}
+
+/*主体部分 第一屏  左边*/
+
+.body_one{
+	height: 679px;
+	width: 100%;
+}
+
+.body_one_left{
+	float: left;
+}
+
+.body_one_left_ul{
+	width: 219px;
+	position: relative;
+}
+
+.body_one_left_ul li{
+	width: 219px;
+	height: 78px;
+	border: 1px solid #e7e7e7;
+}
+.body_one_left_ul li .show_navbox{
+	position: absolute;
+    display: none;
+    left: 220px;
+    top: 0;
+    width: 780px;
+    height: 416px;
+    overflow: hidden;
+    z-index: 20;
+    background: #fff;
+    box-sizing: border-box;
+    border-top: 1px solid #e7e7e7;
+}
+.body_one_left_ul li .show_navbox .nav_right{
+	float: right;
+    position: relative;
+    display: inline-block;
+    width: 240px;
+    height: 416px;
+}
+.show_navbox .nav_right .closebtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+    background: url(../img/smoll-log/paixie_icon.png) no-repeat;
+    background-position: -311px -849px;
+}
+.show_navbox .nav_right .nav_img {
+    position: absolute;
+    display: block;
+    top: 54px;
+    margin-left: 0;
+    left: 0;
+    width: 240px;
+    height: 360px;
+    overflow: hidden;
+}
+.show_navbox .nav_right .nav_img a {
+    display: block;
+    margin: 0;
+    padding: 0;
+    font-size: 17px;
+    color: #333;
+}
+.bodytopleft_menu ul li div.show_navbox .nav_left {
+    float: left;
+    position: relative;
+    display: inline-block;
+    margin: 30px 0 0 20px;
+    width: 500px;
+    height: 370px;
+}
+.show_navbox .nav_left h3 {
+    display: block;
+    font-size: 12px;
+    line-height: 180%;
+    width: 540px;
+    font-weight: bold;
+    font-family: "Microsoft YaHei";
+    color: #333;
+    border-bottom: 1px dotted #e7e7e7;
+    box-sizing: border-box;
+    margin-left: 20px;
+}
+.show_navbox .nav_left span {
+    display: block;
+    margin-bottom: 20px;
+    width: 470px;
+    font-family: "Microsoft YaHei";
+    font-size: 12px;
+    line-height: 180%;
+}
+.body_one_left_ul  li span{
+	display: block;
+	width: 180px;
+	height: 21px;
+	margin: 10px auto 0;
+}
+
+.body_one_left_ul  li p{
+	width: 180px;
+	height: 21px;
+	margin: 10px auto 0;
+}
+
+.body_one_left_ul  li  b{
+	display: block;
+	float: left;
+	width: 35px;
+	height: 21px;
+}
+
+.body_one_left_ul_l1 b{
+	background: url(../img/smoll-log/paixie_icon.png) no-repeat;
+	background-position: -2px -405px;
+}
+
+.body_one_left_ul_l2 b{
+	background: url(../img/smoll-log/paixie_icon.png) no-repeat;
+	background-position:-2px -445px;
+}
+
+.body_one_left_ul_l3 b{
+	background: url(../img/smoll-log/paixie_icon.png) no-repeat;
+	background-position: -2px -491px;
+}
+
+.body_one_left_ul_l4 b{
+	background: url(../img/smoll-log/paixie_icon.png) no-repeat;
+	background-position:-2px -577px;
+}
+
+.body_one_left_ul_l5 b{
+	background: url(../img/smoll-log/paixie_icon.png) no-repeat;
+	background-position: -2px -533px;
+}
+
+.body_one_left_ul_l6 b{
+	background: url(../img/smoll-log/paixie_icon.png) no-repeat;
+	background-position: -2px -624px;
+}
+
+.body_one_left_ul_l7 b{
+	background: url(../img/smoll-log/paixie_icon.png) no-repeat;
+	background-position: -2px -673px;
+}
+
+.body_one_left_ul  li h2 a {
+	font-size: 17px ;
+	font-weight: 100;
+	margin-left: 5px;
+}
+
+.body_one_left_ul li p a{
+	display: block;
+	float: left;
+	margin-left: 5px;
+}
+
+.body_one_left_ul  li a:hover{
+	color: orangered;
+}
+
+.body_one_left_div{
+	margin-top: 10px;
+}
+
+/*body  第一屏中部开始*/
+
+
+
+.body_one_mid{
+	width: 780px;
+	float: left;
+}
+
+/*轮播图开始*/
+
+#body_one_mid_box{
+	width: 780px;
+	height: 380px;
+	position: relative;
+	overflow: hidden;
+}
+
+#list {
+	width: 5100px;
+	height: 380px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	}
+	
+#list li, #list img {
+	width: 780px;
+	height: 380px;
+	}
+	
+#list li {
+	float: left;
+	}
+			
+#list2 {
+	width: 150px;
+	height: 20px;
+	position: absolute;
+	left: 315px;
+	bottom: 30px;
+	}
+	
+#list2 li {
+	width: 10px;
+	height: 10px;
+	background: url(../img/smoll-log/home_slide_icon.png) no-repeat;
+	background-position: -33px -165px;
+	cursor: pointer;
+	float: left;
+	margin-left: 5px;
+	}
+#list2 li.active {
+	width: 26px;
+	height: 10px;
+	background-position: -2px -165px;
+	}
+			
+#left, #right {
+	width: 40px;
+    height: 80px;
+	position: absolute;
+	cursor: pointer;
+	top: 45%;
+	}
+	
+#left {	
+	left: -40px;
+	background: url(../img/smoll-log/home_slide_icon.png) no-repeat;
+	background-position: 0px 0px;
+	}
+	
+#right {
+	right: -40px;
+	background: url(../img/smoll-log/home_slide_icon.png) no-repeat;
+	background-position: 0px -81px;
+	}
+
+.body_one_mid > h5{
+	color: #333;;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+	height: 34px;
+	line-height: 34px;
+	margin-left: 10px;
+}
+
+#body_one_mid_3{
+    height: 145px;
+    width: 776px;
+    margin: 0 2px;
+    overflow: hidden;
+}
+
+#body_one_mid_3  a{
+	display: block;
+	width: 258px;
+	height: 145px;
+	overflow: hidden;
+	float: left;
+}
+
+#body_one_mid_4{
+    height: 110px;
+    width: 776px;
+    margin: 10px 2px;
+    overflow: hidden;
+	margin-left: 0px;
+}
+
+#body_one_mid_4  a{
+	display: block;
+	width: 258px;
+	height: 110px;
+	float: left;
+	margin-left: 0px;
+	overflow: hidden;
+}
+
+
+/*主体第一屏右边*/
+/*最上*/
+
+.body_one_right{
+	float: right;
+    width: 220px;
+}
+
+.body_one_right_top{
+	font-family: "Microsoft YaHei";
+    width: 220px;
+    height: 65px;
+}
+
+.body_one_right_top > a{
+	display:block ;
+	float: left;
+    color: #fff;
+    width: 73px;
+    height: 65px;
+    overflow: hidden;
+    background: #989ba3;
+}
+.body_one_right_top a:hover{
+	background: orangered;
+}
+.body_one_right_top_1{
+	display: block;
+	margin: 0 auto;
+	width: 32px;
+	height: 32px;
+	background: url(../img/smoll-log/paixie_icon.png) no-repeat;
+	background-position: -125px -200px;
+}
+.body_one_right_top_2{
+	display: block;
+	margin: 0 auto;
+	width: 32px;
+	height: 32px;
+	background: url(../img/smoll-log/paixie_icon.png) no-repeat;
+    background-position: -199px -200px;
+}
+.body_one_right_top_3{
+	display: block;
+	margin: 0 auto;
+	width: 32px;
+	height: 32px;
+	background: url(../img/smoll-log/paixie_icon.png) no-repeat;
+	background-position: -272px -200px;
+}
+
+.body_one_right_top > a > b{
+	display: block;
+	float: left;
+	width: 73px;
+	height: 33px;
+	line-height: 33px;
+	color: white;
+	text-align: center;
+	font-size: 14px;
+    font-weight: 100;
+}
+
+a:hover{
+	color: orangered;
+}
+
+/*右中 1*/
+
+.body_one_right_mid1{
+	display: block;
+    width: 220px;
+    height: 100px;
+    overflow: hidden;
+    background: #F3F3F3;
+}
+
+.p1{
+	height: 21px;
+}
+
+.body_one_right_mid1 >  p > span{
+	display: block;
+	float: left;
+	margin-left: 10px;
+	font-weight: 100;
+    font-family: "Microsoft YaHei";
+    font-size: 14px;
+}
+
+.body_one_right_mid1 > p > a{
+	display: block;
+	margin-left: 12px;
+	font-weight: 100;
+    font-family: "Microsoft YaHei";
+    font-size: 12px;
+    line-height: 190%;
+}
+
+.a1{
+	display: block;
+	float: right;
+	margin-right: 10px;
+}
+
+.body_one_right_mid2{
+	width: 220px;
+	height: 215px;
+}
+
+.body_one_right_mid3{
+	width: 220px;
+	height: 33px;
+	line-height: 33px;
+	position: relative;
+}
+.body_one_right_mid3 b{
+	display: block;
+	width: 110px;
+	border:1px solid #000000;
+	position: absolute;
+	top: 31px;
+	left: 0;
+}
+
+.body_one_right_mid3 a{
+	display: block;
+	float: left;
+	text-align: center;
+	width: 110px;
+	height: 33px;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+#body_one_right_mid4{
+	width: 218px;
+	height: 264px;
+	position: relative;
+	display: none;
+}
+#body_one_right_mid4 a{
+	display: block;
+	width: 218px;
+	height: 117px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#body_one_right_mid5{
+	width: 218px;
+	height: 264px;
+	display: block;
+	position: relative;
+}
+#body_one_right_mid5 a{
+	display: block;
+	width: 218px;
+	height: 117px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/*爱团购*/
+
+.body_love{
+	width: 100%;
+	height: 262px;
+}
+
+.body_love_nav{
+	display: block;
+    color: #333;
+    width: 100%;
+    overflow: hidden;
+    height: 54px;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.body_love_nav > h2 > a {
+	float: left;
+    display: inline-block;
+    line-height: 54px;
+    font-size: 17px;
+    font-weight: 100;
+    font-family: "Microsoft YaHei";
+    margin-right: 170px;
+}
+
+.body_love_nav  h3 {
+	float: left;
+    display: inline-block;
+    font-family: "Microsoft YaHei";
+    position: relative;
+    top: 18px;
+}
+.body_love_nav  h3 i{
+	display: block;
+	width: 90px;
+	height: 12px;
+	background: url(../img/smoll-log/paixie_icon.png) no-repeat -141px -356px;;
+	position: absolute;
+	top: 29px;
+	left: 0px;
+}
+.body_love_nav > h3 > .body_love_nav_a1{
+	display: inline-block;
+    text-align: center;
+    width: 90px;
+    height: 34px;
+    font-size: 12px;
+}
+.body_love_nav h3 a:hover{
+	color: #0487DF;
+}
+
+.body_love_nav_a2{
+	display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    width: 90px;
+    height: 34px;
+    font-size: 12px;
+}
+
+.body_love_nav_a2 > b{
+	float: left;
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: -6px;
+    width: 22px;
+    height: 22px;
+    background: url(../img/smoll-log/paixie_icon.png) no-repeat;
+    background-position: -165px -295px;
+}
+
+.body_love_nav > h5 > a {
+	float: right;
+    display: inline-block;
+    margin-top: 20px;
+    width: 60px;
+    height: 19px;
+    background: url(../img/smoll-log/paixie_icon.png) no-repeat;
+    background-position: -197px -490px;
+}
+#love1{
+	display: none;
+}
+#love2{
+	display: block;
+}
+
+.body_love_list li{
+	float: left;
+    width: 203px;
+    height: 200px;
+}
+.body_love_list li a{
+	display: block;
+	width: 203px;
+	height: 150px;
+	
+}
+.body_love_list li div{
+	width: 165px;
+	height: 20px;
+	line-height: 20px;
+	background: #C0C0C0;
+	color: white;
+	margin: 0 auto;
+	position: relative;
+	font-size: 14px;
+}
+.body_love_list li div span{
+    color: #fff;
+    font-size: 14px;
+}
+.body_love_list li div .ss1{
+	margin-left: 5px;
+	margin-right: 30px;
+	font-size:12px ;
+}
+.body_love_list li div b{
+	display: block;
+	width: 0px;
+	height: 16px;
+	border: 2px solid #DB4C4C;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+}
+
+.body_love_list li p{
+	display: block;
+    width: 165px;
+    font-family: Verdana;
+    color: #e7e7e7;
+    margin: 5px auto;
+}
+.body_love_list li p del{
+	font-size: 12px;
+    color: #999;
+    margin-right: 10px;
+}
+.body_love_list li p i{
+	color: #c00;
+    font-family: Verdana;
+    margin-left: 10px;
+    text-decoration: none;
+    font-size: 14px;
+	font-style: normal;
+}
+/*.body_out*/
+
+.body_out{
+	position: relative;
+    display: block;
+    margin-top: 30px;
+    text-align: left;
+    height: 535px;
+    width: 100%;
+}
+
+.body_out_nav_i1{
+	display: inline-block;
+    float: left;
+    font-style: normal;
+    color: #fff;
+	background: #FED49A;;
+    text-align: center;
+    font-family: Verdana;
+    font-size: 16px;
+    line-height: 150%;
+    margin-right: 12px;
+    width: 23px;
+    height: 23px;
+}
+.body_out_nav{
+	line-height: 180%;
+}
+.body_out_nav > h2{
+	position: relative;
+    float: left;
+    font-size: 17px;
+    font-family: "Microsoft YaHei";
+    font-weight: 100;
+    line-height: 32px;
+    overflow: hidden;
+    width: 246px;
+    margin-top: -5px;
+    color: #333;
+}
+
+.body_out_nav span b{
+	position: absolute;
+    background: url(../img/smoll-log/px_title_bg.png) no-repeat 0 0;
+    height: 10px;
+    width: 142px;
+    left: -23px;
+    bottom: -8px;
+    z-index: 2;
+}
+
+.body_out_nav > h2 > i{
+	position: relative;
+    top: -2px;
+    display: inline-block;
+    font-style: normal;
+    color: #e7e7e7;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.body_out_nav > span{
+	display: inline-block;
+    position: relative;
+}
+
+.body_out_nav > span > a{
+	float: left;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    color: #666;
+    width: 76px;
+    text-align: center;
+    padding: 0 10px;
+    margin-right: 25px;
+}
+.body_out_nav > span > a:hover{
+	color:#f68003;
+}
+
+.body_out_nav > .body_out_nav_a1{
+	float: right;
+    width: 54px;
+    color: #999;
+    line-height: 18px;
+    text-align: center;
+    font-family: "Microsoft YaHei";
+    height: 20px;
+    border: 1px solid #e7e7e7;
+}
+
+.body_out_body{
+	border-top-color: #FED49A;
+    border-left: 0;
+    display: block;
+    width: 100%;
+    border-top: 1px solid #FED49A; ;
+}
+
+.body_out_body_left{
+	float: left;
+    display: inline-block;
+    width: 214px;
+    height: 431px;
+    overflow: hidden;
+    font-family: "Microsoft YaHei";
+}
+
+.body_out_body_left_a1{
+	display: block;
+    width: 214px;
+    height: 220px;
+    overflow: hidden;
+    background: url(../img/imgs/1470639963b5fd7b.jpg) no-repeat center center;
+}
+
+.body_out_body_left_a1 > img{
+	    width: 100%;
+}
+
+.body_out_body_left_d1{
+	overflow: hidden;
+    height: 98px;
+    position: relative;
+    display: block;
+    background: #FFECD3;
+}
+
+.body_out_body_left_d1_s1{
+	margin: 10px auto;
+    color: #333;
+    font-weight: bold;
+    display: block;
+    width: 180px;
+    line-height: 180%;
+}
+
+.body_out_body_left_d1_s2{
+	display: block;
+    width: 180px;
+    line-height: 180%;
+    margin: 0 auto;
+}
+
+.body_out_body_left_d1_s2 > a{
+	display: inline-block;
+    margin-right: 10px;
+    color: #666;
+    font: 12px \5b8b\4f53,tahoma,arial,sans-serif;
+}
+
+.body_out_body_left_d1_a1{
+	position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 214px;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    background: #FFECD3;
+}
+
+.body_out_body_left_d1_a1 > i{
+	display: block;
+    width: 13px;
+    height: 12px;
+    margin: 0 auto;
+    background: url(../img/smoll-log/paixie_icon.png) no-repeat;
+    background-position: -287px -339px;
+}
+
+.body_out_body_left_d2 {
+	display: block;
+    height: 113px;
+    overflow: hidden;
+    background: #FFF4E7;
+}
+
+
+.body_out_body_left_d2_s1{
+	margin: 10px auto;
+    color: #333;
+    font-weight: bold;
+    display: block;
+    width: 180px;
+}
+
+.body_out_body_left_d2_s2{
+	height: 62px;
+    overflow: hidden;
+    display: block;
+    width: 180px;
+    line-height: 180%;
+    margin: 0 auto;
+}
+
+.body_out_body_left_d2_s2 > a{
+	display: inline-block;
+    color: #666;
+    margin-right: 10px;
+}
+
+.body_out_body_right{
+	display: inline-block;
+    width: 1005px;
+    float: left;
+    height: 431px;
+}
+
+
+.body_out_body_right_d1{
+	display: block;
+    height: 100%;
+}
+
+.body_out_body_right_d1 > ul{
+	width: 1006px;
+    padding-left: 1px;
+}
+
+.body_out_body_right_d1 > ul > li {
+	float: left;
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    height: 215px;
+    border-bottom: 1px solid #e7e7e7;
+    border-right: 1px solid #e7e7e7;
+}
+.body_out_body_right_d1 ul li a{
+	display: block;
+    text-align: center;
+}
+.body_out_body_right_d1 ul li a img{
+	width: 150px;
+    height: 150px;
+    margin: 10px auto 0 auto;
+}
+.body_out_body_right_d1 ul li a span{
+	text-align: left;
+    font-size: 12px;
+    width: 170px;
+    height: 22px;
+    display: block;
+    margin: 0 auto;
+    color: #666;
+    line-height: 20px;
+    overflow: hidden;
+}
+
+.body_out_body_right_d1 ul li b{
+	text-align: left;
+    font-size: 14px;
+    width: 170px;
+    height: 22px;
+    display: block;
+    margin: 0 auto;
+    color: #E4393C;;
+    line-height: 20px;
+    overflow: hidden;
+    font-family: "微软雅黑";
+    font-weight: normal;
+}
+
+.body_out_body_foot{
+	display: block;
+    width: 100%;
+    height: 70px;
+    overflow: hidden;
+    margin: 0 auto 10px auto;
+    border-bottom: 1px solid #e7e7e7;
+    background: url(../img/smoll-log/147373855173a075.png) no-repeat 0 0;
+}
+
+/*女装*/
+
+.body_girl{
+	position: relative;
+    display: block;
+    margin-top: 30px;
+    text-align: left;
+    height: 535px;
+}
+
+.body_girl_nav_i1{
+	display: inline-block;
+    float: left;
+    font-style: normal;
+    color: #fff;
+	background: #FFCAD0;
+    text-align: center;
+    font-family: Verdana;
+    font-size: 16px;
+    line-height: 150%;
+    margin-right: 12px;
+    width: 23px;
+    height: 23px;
+}
+
+.body_girl_nav > h2{
+	position: relative;
+    float: left;
+    font-size: 17px;
+    font-family: "Microsoft YaHei";
+    font-weight: 100;
+    line-height: 32px;
+    overflow: hidden;
+    width: 246px;
+    margin-top: -8px;
+    color: #333;
+}
+
+.body_girl_nav > h2 > i{
+	position: relative;
+    top: -2px;
+    display: inline-block;
+    font-style: normal;
+    color: #e7e7e7;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.body_girl_nav > span{
+	display: inline-block;
+    position: relative;
+}
+.body_girl_nav span b{
+	position: absolute;
+    background: url(../img/smoll-log/px_title_bg.png) no-repeat 0 -16px;
+    height: 10px;
+    width: 142px;
+    left: -23px;
+    bottom: -8px;
+    z-index: 2;
+}
+.body_girl_nav > span > a{
+	float: left;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    color: #666;
+    width: 76px;
+    text-align: center;
+    padding: 0 10px;
+    margin-right: 25px;
+}
+.body_girl_nav > span > a:hover{
+	color: hotpink;
+}
+.body_girl_nav_a1{
+	float: right;
+    width: 54px;
+    color: #999;
+    line-height: 18px;
+    text-align: center;
+    font-family: "Microsoft YaHei";
+    height: 20px;
+    border: 1px solid #e7e7e7;
+}
+
+.body_girl_body{
+	border-top-color: #FED49A;
+    border-left: 0;
+    display: block;
+    width: 100%;
+    border-top: 1px solid #FFCAD0;;
+}
+
+.body_girl_body_left{
+	float: left;
+    display: inline-block;
+    width: 214px;
+    height: 431px;
+    overflow: hidden;
+    font-family: "Microsoft YaHei";
+}
+
+.body_girl_body_left_a1{
+	display: block;
+    width: 214px;
+    height: 220px;
+    overflow: hidden;
+    background: url(../img/new/l7.jpg) no-repeat center center;
+}
+
+.body_girl_body_left_a1 > img{
+	    width: 100%;
+}
+
+.body_girl_body_left_d1{
+	overflow: hidden;
+    height: 98px;
+    position: relative;
+    display: block;
+    background: #FFE8EA;
+}
+
+.body_girl_body_left_d1_s1{
+	margin: 10px auto;
+    color: #333;
+    font-weight: bold;
+    display: block;
+    width: 180px;
+    line-height: 180%;
+}
+
+.body_girl_body_left_d1_s2{
+	display: block;
+    width: 180px;
+    line-height: 180%;
+    margin: 0 auto;
+}
+
+.body_girl_body_left_d1_s2 > a{
+	display: inline-block;
+    margin-right: 10px;
+    color: #666;
+    font: 12px \5b8b\4f53,tahoma,arial,sans-serif;
+}
+
+.body_girl_body_left_d1_a1{
+	position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 214px;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    background: #FFE8EA;
+}
+
+.body_girl_body_left_d1_a1 > i{
+	display: block;
+    width: 13px;
+    height: 12px;
+    margin: 0 auto;
+    background: url(../img/smoll-log/paixie_icon.png) no-repeat;
+    background-position: -287px -339px;
+}
+
+.body_girl_body_left_d2 {
+	display: block;
+    height: 113px;
+    overflow: hidden;
+    background:#FFF2F4;
+}
+
+
+.body_girl_body_left_d2_s1{
+	margin: 10px auto;
+    color: #333;
+    font-weight: bold;
+    display: block;
+    width: 180px;
+}
+
+.body_girl_body_left_d2_s2{
+	height: 62px;
+    overflow: hidden;
+    display: block;
+    width: 180px;
+    line-height: 180%;
+    margin: 0 auto;
+}
+
+.body_girl_body_left_d2_s2 > a{
+	display: inline-block;
+    color: #666;
+    margin-right: 10px;
+}
+
+.body_girl_body_right{
+	display: inline-block;
+    width: 1005px;
+    float: left;
+    height: 431px;
+}
+
+
+.body_girl_body_right_d1{
+	display: block;
+    height: 100%;
+}
+
+.body_girl_body_right_d1 ul{
+	width: 1006px;
+    padding-left: 1px;
+}
+.body_girl_body_right_d1 ul li {
+	float: left;
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    height: 215px;
+    border-bottom: 1px solid #e7e7e7;
+    border-right: 1px solid #e7e7e7;
+    box-sizing: content-box;
+}
+.body_girl_body_right_d1 ul li a{
+	display: block;
+    text-align: center;
+}
+.body_girl_body_right_d1 ul li a img{
+	width: 150px;
+    height: 150px;
+    margin: 10px auto 0 auto;
+}
+.body_girl_body_right_d1 ul li a span{
+	text-align: left;
+    font-size: 12px;
+    width: 170px;
+    height: 22px;
+    display: block;
+    margin: 0 auto;
+    color: #666;
+    line-height: 20px;
+    overflow: hidden;
+}
+.body_girl_body_right_d1 ul li a b{
+    text-align: left;
+    width: 170px;
+    height: 22px;
+    display: block;
+    margin: 0 auto;
+    line-height: 20px;
+    overflow: hidden;
+    font-size: 14px;
+    font-family: "微软雅黑";
+    color: #E4393C;
+}
+.body_girl_body_foot{
+	display: block;
+    width: 100%;
+    height: 70px;
+    overflow: hidden;
+    margin: 0 auto 10px auto;
+    border-bottom: 1px solid #e7e7e7;
+    background: url(../img/smoll-log/14679574499ef2f5.png) no-repeat;
+}
+
+/*男装*/
+
+.body_boy{
+	position: relative;
+    display: block;
+    margin-top: 30px;
+    text-align: left;
+    height: 535px;
+}
+
+.body_boy_nav_i1{
+	display: inline-block;
+    float: left;
+    font-style: normal;
+    color: #fff;
+	background: #A8C3F8;
+    text-align: center;
+    font-family: Verdana;
+    font-size: 16px;
+    line-height: 150%;
+    margin-right: 12px;
+    width: 23px;
+    height: 23px;
+}
+
+.body_boy_nav > h2{
+	position: relative;
+    float: left;
+    font-size: 17px;
+    font-family: "Microsoft YaHei";
+    font-weight: 100;
+    line-height: 32px;
+    overflow: hidden;
+    width: 246px;
+    margin-top: -8px;
+    color: #333;
+}
+
+.body_boy_nav > h2 > i{
+	position: relative;
+    top: -2px;
+    display: inline-block;
+    font-style: normal;
+    color: #e7e7e7;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.body_boy_nav > span{
+	display: inline-block;
+    position: relative;
+}
+
+.body_boy_nav span b{
+	position: absolute;
+    background: url(../img/smoll-log/px_title_bg.png) no-repeat 0 -33px;
+    height: 10px;
+    width: 142px;
+    left: -23px;
+    bottom: -8px;
+    z-index: 2;
+}
+
+.body_boy_nav > span > a{
+	float: left;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    color: #666;
+    width: 76px;
+    text-align: center;
+    padding: 0 10px;
+    margin-right: 25px;
+}
+.body_boy_nav > span > a:hover{
+	color: #5587f0;
+}
+.body_boy_nav_a1{
+	float: right;
+    width: 54px;
+    color: #999;
+    line-height: 18px;
+    text-align: center;
+    font-family: "Microsoft YaHei";
+    height: 20px;
+    border: 1px solid #e7e7e7;
+}
+
+.body_boy_body{
+    border-left: 0;
+    display: block;
+    width: 100%;
+    border-top: 1px solid #5587f0;
+}
+
+.body_boy_body_left{
+	float: left;
+    display: inline-block;
+    width: 214px;
+    height: 431px;
+    overflow: hidden;
+    font-family: "Microsoft YaHei";
+}
+
+.body_boy_body_left_a1{
+	display: block;
+    width: 214px;
+    height: 220px;
+    overflow: hidden;
+    background: url(../img/imgs/147064311175b040.jpg) no-repeat center center;
+}
+
+.body_boy_body_left_a1 > img{
+	    width: 100%;
+}
+
+.body_boy_body_left_d1{
+	overflow: hidden;
+    height: 98px;
+    position: relative;
+    display: block;
+    background: #D8E5FC;
+}
+
+.body_boy_body_left_d1_s1{
+	margin: 10px auto;
+    color: #333;
+    font-weight: bold;
+    display: block;
+    width: 180px;
+    line-height: 180%;
+}
+
+.body_boy_body_left_d1_s2{
+	display: block;
+    width: 180px;
+    line-height: 180%;
+    margin: 0 auto;
+}
+
+.body_boy_body_left_d1_s2 > a{
+	display: inline-block;
+    margin-right: 10px;
+    color: #666;
+    font: 12px \5b8b\4f53,tahoma,arial,sans-serif;
+}
+
+.body_boy_body_left_d1_a1{
+	position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 214px;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    background: #D8E5FC;
+}
+
+.body_boy_body_left_d1_a1 > i{
+	display: block;
+    width: 13px;
+    height: 12px;
+    margin: 0 auto;
+    background: url(../img/smoll-log/paixie_icon.png) no-repeat;
+    background-position: -287px -339px;
+}
+
+.body_boy_body_left_d2 {
+	display: block;
+    height: 113px;
+    overflow: hidden;
+    background:#EAF1FD;
+}
+
+
+.body_boy_body_left_d2_s1{
+	margin: 10px auto;
+    color: #333;
+    font-weight: bold;
+    display: block;
+    width: 180px;
+}
+
+.body_boy_body_left_d2_s2{
+	height: 62px;
+    overflow: hidden;
+    display: block;
+    width: 180px;
+    line-height: 180%;
+    margin: 0 auto;
+}
+
+.body_boy_body_left_d2_s2 > a{
+	display: inline-block;
+    color: #666;
+    margin-right: 10px;
+}
+
+.body_boy_body_right{
+	display: inline-block;
+    width: 1005px;
+    float: left;
+    height: 431px;
+}
+
+
+.body_boy_body_right_d1{
+	display: block;
+    height: 100%;
+}
+
+.body_boy_body_right_d1  ul{
+	width: 1006px;
+    padding-left: 1px;
+}
+.body_boy_body_right_d1  ul li {
+	float: left;
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    height: 215px;
+    border-bottom: 1px solid #e7e7e7;
+    border-right: 1px solid #e7e7e7;
+    box-sizing: content-box;
+}
+.body_boy_body_right_d1 ul li a{
+	display: block;
+    text-align: center;
+}
+.body_boy_body_right_d1 ul li a img{
+	width: 150px;
+    height: 150px;
+    margin: 10px auto 0 auto;
+}
+.body_boy_body_right_d1 ul li a span{
+	text-align: left;
+    font-size: 12px;
+    width: 170px;
+    height: 22px;
+    display: block;
+    margin: 0 auto;
+    color: #666;
+    line-height: 20px;
+    overflow: hidden;
+}
+.body_boy_body_right_d1 ul li a b{
+    text-align: left;
+    width: 170px;
+    height: 22px;
+    display: block;
+    margin: 0 auto;
+    line-height: 20px;
+    overflow: hidden;
+    font-size: 14px;
+    font-family: "微软雅黑";
+    color: #E4393C;
+}
+.body_boy_body_foot{
+	display: block;
+    width: 100%;
+    height: 70px;
+    overflow: hidden;
+    margin: 0 auto 10px auto;
+    border-bottom: 1px solid #e7e7e7;
+    background: url(../img/smoll-log/147072504444fdf1.jpg) no-repeat 0 0;
+}
+
+/*童装*/
+
+.body_child{
+	position: relative;
+    display: block;
+    margin-top: 30px;
+    text-align: left;
+    height: 535px;
+}
+
+.body_child_nav_i1{
+	display: inline-block;
+    float: left;
+    font-style: normal;
+    color: #fff;
+	background: #A3E5D7;
+    text-align: center;
+    font-family: Verdana;
+    font-size: 16px;
+    line-height: 150%;
+    margin-right: 12px;
+    width: 23px;
+    height: 23px;
+}
+
+.body_child_nav > h2{
+	position: relative;
+    float: left;
+    font-size: 17px;
+    font-family: "Microsoft YaHei";
+    font-weight: 100;
+    line-height: 32px;
+    overflow: hidden;
+    width: 246px;
+    margin-top: -8px;
+    color: #333;
+}
+
+.body_child_nav > h2 > i{
+	position: relative;
+    top: -2px;
+    display: inline-block;
+    font-style: normal;
+    color: #e7e7e7;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.body_child_nav > span{
+	display: inline-block;
+    position: relative;
+}
+
+.body_child_nav span b{
+	position: absolute;
+    background: url(../img/smoll-log/px_title_bg.png) no-repeat 0 -84px;
+    height: 10px;
+    width: 142px;
+    left: -23px;
+    bottom: -8px;
+    z-index: 2;
+}
+
+.body_child_nav > span > a{
+	float: left;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    color: #666;
+    width: 76px;
+    text-align: center;
+    padding: 0 10px;
+    margin-right: 25px;
+}
+.body_child_nav > span > a:hover{
+	color: #64D2BA;;
+}
+.body_child_nav_a1{
+	float: right;
+    width: 54px;
+    color: #999;
+    line-height: 18px;
+    text-align: center;
+    font-family: "Microsoft YaHei";
+    height: 20px;
+    border: 1px solid #e7e7e7;
+}
+
+.body_child_body{
+    border-left: 0;
+    display: block;
+    width: 100%;
+    border-top: 1px solid #A3E5D7;
+}
+
+.body_child_body_left{
+	float: left;
+    display: inline-block;
+    width: 214px;
+    height: 431px;
+    overflow: hidden;
+    font-family: "Microsoft YaHei";
+}
+
+.body_child_body_left_a1{
+	display: block;
+    width: 214px;
+    height: 220px;
+    overflow: hidden;
+    background: url(../img/imgs/1470643914a1c82d.jpg) no-repeat center center;
+}
+
+.body_child_body_left_a1 > img{
+	    width: 100%;
+}
+
+.body_child_body_left_d1{
+	overflow: hidden;
+    height: 98px;
+    position: relative;
+    display: block;
+    background: #D6F4ED;
+}
+
+.body_child_body_left_d1_s1{
+	margin: 10px auto;
+    color: #333;
+    font-weight: bold;
+    display: block;
+    width: 180px;
+    line-height: 180%;
+}
+
+.body_child_body_left_d1_s2{
+	display: block;
+    width: 180px;
+    line-height: 180%;
+    margin: 0 auto;
+}
+
+.body_child_body_left_d1_s2 > a{
+	display: inline-block;
+    margin-right: 10px;
+    color: #666;
+    font: 12px \5b8b\4f53,tahoma,arial,sans-serif;
+}
+
+.body_child_body_left_d1_a1{
+	position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 214px;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    background: #D6F4ED;
+}
+
+.body_child_body_left_d1_a1 > i{
+	display: block;
+    width: 13px;
+    height: 12px;
+    margin: 0 auto;
+    background: url(../img/smoll-log/paixie_icon.png) no-repeat;
+    background-position: -287px -339px;
+}
+
+.body_child_body_left_d2 {
+	display: block;
+    height: 113px;
+    overflow: hidden;
+    background: #E9F9F5;
+}
+
+
+.body_child_body_left_d2_s1{
+	margin: 10px auto;
+    color: #333;
+    font-weight: bold;
+    display: block;
+    width: 180px;
+}
+
+.body_child_body_left_d2_s2{
+	height: 62px;
+    overflow: hidden;
+    display: block;
+    width: 180px;
+    line-height: 180%;
+    margin: 0 auto;
+}
+
+.body_child_body_left_d2_s2 > a{
+	display: inline-block;
+    color: #666;
+    margin-right: 10px;
+}
+
+.body_child_body_right{
+	display: inline-block;
+    width: 1005px;
+    float: left;
+    height: 431px;
+}
+
+
+.body_child_body_right_d1{
+	display: block;
+    height: 100%;
+}
+
+.body_child_body_right_d1 > ul{
+	width: 1006px;
+    padding-left: 1px;
+}
+.body_child_body_right_d1 > ul > li {
+	float: left;
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    height: 215px;
+    border-bottom: 1px solid #e7e7e7;
+    border-right: 1px solid #e7e7e7;
+    box-sizing: content-box;
+}
+.body_child_body_right_d1 ul li a{
+	display: block;
+    text-align: center;
+}
+.body_child_body_right_d1 ul li a img{
+	width: 150px;
+    height: 150px;
+    margin: 10px auto 0 auto;
+}
+.body_child_body_right_d1 ul li a span{
+	text-align: left;
+    font-size: 12px;
+    width: 170px;
+    height: 22px;
+    display: block;
+    margin: 0 auto;
+    color: #666;
+    line-height: 20px;
+    overflow: hidden;
+}
+.body_child_body_right_d1 ul li a b{
+    text-align: left;
+    width: 170px;
+    height: 22px;
+    display: block;
+    margin: 0 auto;
+    line-height: 20px;
+    overflow: hidden;
+    font-size: 14px;
+    font-family: "微软雅黑";
+    color: #E4393C;
+}
+.body_child_body_foot{
+	display: block;
+    width: 100%;
+    height: 70px;
+    overflow: hidden;
+    margin: 0 auto 10px auto;
+    border-bottom: 1px solid #e7e7e7;
+    background: url(../img/smoll-log/1470725103f02a7a.jpg) no-repeat 0 0;
+}
+
+/*箱包*/
+
+.body_box{
+	position: relative;
+    display: block;
+    margin-top: 30px;
+    text-align: left;
+    height: 535px;
+}
+
+.body_box_nav_i1{
+	display: inline-block;
+    float: left;
+    font-style: normal;
+    color: #fff;
+	background: #C8D1DA;
+    text-align: center;
+    font-family: Verdana;
+    font-size: 16px;
+    line-height: 150%;
+    margin-right: 12px;
+    width: 23px;
+    height: 23px;
+}
+
+.body_box_nav > h2{
+	position: relative;
+    float: left;
+    font-size: 17px;
+    font-family: "Microsoft YaHei";
+    font-weight: 100;
+    line-height: 32px;
+    overflow: hidden;
+    width: 246px;
+    margin-top: -8px;
+    color: #333;
+}
+
+.body_box_nav > h2 > i{
+	position: relative;
+    top: -2px;
+    display: inline-block;
+    font-style: normal;
+    color: #e7e7e7;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.body_box_nav > span{
+	display: inline-block;
+    position: relative;
+}
+
+.body_box_nav span b{
+	position: absolute;
+    background: url(../img/smoll-log/px_title_bg.png) no-repeat 0 -67px;
+    height: 10px;
+    width: 142px;
+    left: -23px;
+    bottom: -8px;
+    z-index: 2;
+}
+
+.body_box_nav > span > a{
+	float: left;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    color: #666;
+    width: 76px;
+    text-align: center;
+    padding: 0 10px;
+    margin-right: 25px;
+}
+.body_box_nav > span > a:hover{
+	color: #9FAFBF;
+}
+.body_box_nav_a1{
+	float: right;
+    width: 54px;
+    color: #999;
+    line-height: 18px;
+    text-align: center;
+    font-family: "Microsoft YaHei";
+    height: 20px;
+    border: 1px solid #e7e7e7;
+}
+
+.body_box_body{
+    border-left: 0;
+    display: block;
+    width: 100%;
+    border-top: 2px solid #C8D1DA;
+}
+
+.body_box_body_left{
+	float: left;
+    display: inline-block;
+    width: 214px;
+    height: 431px;
+    overflow: hidden;
+    font-family: "Microsoft YaHei";
+}
+
+.body_box_body_left_a1{
+	display: block;
+    width: 214px;
+    height: 220px;
+    overflow: hidden;
+    background: url(../img/imgs/14707051840cef3f.jpg) no-repeat center center;
+}
+
+.body_box_body_left_a1 > img{
+	    width: 100%;
+}
+
+.body_box_body_left_d1{
+	overflow: hidden;
+    height: 98px;
+    position: relative;
+    display: block;
+    background:#E6EBEE;
+}
+
+.body_box_body_left_d1_s1{
+	margin: 10px auto;
+    color: #333;
+    font-weight: bold;
+    display: block;
+    width: 180px;
+    line-height: 180%;
+}
+
+.body_box_body_left_d1_s2{
+	display: block;
+    width: 180px;
+    line-height: 180%;
+    margin: 0 auto;
+}
+
+.body_box_body_left_d1_s2 > a{
+	display: inline-block;
+    margin-right: 10px;
+    color: #666;
+    font: 12px \5b8b\4f53,tahoma,arial,sans-serif;
+}
+
+.body_box_body_left_d1_a1{
+	position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 214px;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    background: #E6EBEE;
+}
+
+.body_box_body_left_d1_a1 > i{
+	display: block;
+    width: 13px;
+    height: 12px;
+    margin: 0 auto;
+    background: url(../img/smoll-log/paixie_icon.png) no-repeat;
+    background-position: -287px -339px;
+}
+
+.body_box_body_left_d2 {
+	display: block;
+    height: 113px;
+    overflow: hidden;
+    background: #F2F4F6;
+}
+
+
+.body_box_body_left_d2_s1{
+	margin: 10px auto;
+    color: #333;
+    font-weight: bold;
+    display: block;
+    width: 180px;
+}
+
+.body_box_body_left_d2_s2{
+	height: 62px;
+    overflow: hidden;
+    display: block;
+    width: 180px;
+    line-height: 180%;
+    margin: 0 auto;
+}
+
+.body_box_body_left_d2_s2 > a{
+	display: inline-block;
+    color: #666;
+    margin-right: 10px;
+}
+
+.body_box_body_right{
+	display: inline-block;
+    width: 1005px;
+    float: left;
+    height: 431px;
+}
+
+
+.body_box_body_right_d1{
+	display: block;
+    height: 100%;
+}
+
+.body_box_body_right_d1 > ul{
+	width: 1006px;
+    padding-left: 1px;
+}
+.body_box_body_right_d1 > ul > li {
+	float: left;
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    height: 215px;
+    border-bottom: 1px solid #e7e7e7;
+    border-right: 1px solid #e7e7e7;
+    box-sizing: content-box;
+}
+.body_box_body_right_d1 ul li a{
+	display: block;
+    text-align: center;
+}
+.body_box_body_right_d1 ul li a img{
+	width: 150px;
+    height: 150px;
+    margin: 10px auto 0 auto;
+}
+.body_box_body_right_d1 ul li a span{
+	text-align: left;
+    font-size: 12px;
+    width: 170px;
+    height: 22px;
+    display: block;
+    margin: 0 auto;
+    color: #666;
+    line-height: 20px;
+    overflow: hidden;
+}
+.body_box_body_right_d1 ul li a b{
+    text-align: left;
+    width: 170px;
+    height: 22px;
+    display: block;
+    margin: 0 auto;
+    line-height: 20px;
+    overflow: hidden;
+    font-size: 14px;
+    font-family: "微软雅黑";
+    color: #E4393C;
+}
+.body_box_body_foot{
+	display: block;
+    width: 100%;
+    height: 70px;
+    overflow: hidden;
+    margin: 0 auto 10px auto;
+    border-bottom: 1px solid #e7e7e7;
+    background: url(../img/smoll-log/1465969531b74676.jpg) no-repeat 0 0;
+}
+
+.body_box_body_foot a{
+	display: block;
+	float: left;
+	width: 110px;
+	height: 70px;
+}
+
+/*品牌入驻，拍鞋影响力，媒体报道，品牌咨询*/
+
+.body_other{
+	height: 313px;
+	width: 100%;
+	position: relative;
+}
+
+.body_other div{
+	float: left;
+	margin-left: 20px;
+}
+.body_other h2{
+	margin-top:21px ;
+	font-size: 16px;
+	line-height: 2;
+	color: #333333;
+	font-weight: 100;
+}
+
+.body_other p{
+	position: absolute;
+	bottom: 0px;
+	background: #333;
+	opacity: 0.8;
+	width: 100%;
+	color: white;
+}
+.body_other ul{
+	float: left;
+	margin-left:10px ;
+}
+.body_other ul li a{
+	display: block;
+	line-height: 2;
+	margin-top: 3px;
+}
+.body_other .body_other_media_a2{
+	margin-top: 0px;
+}
+/*品牌入驻*/
+.body_other .body_other_brandcome{
+	height: 313px;
+	width: 400px;
+	float: left;
+	margin-left: 0px;
+}
+
+/*拍鞋影响力*/
+.body_other_influence{
+	height: 313px;
+	width: 400px;
+	float: left;
+}
+.aa1{
+	display: block;
+	position: relative;
+	float: left;
+}
+
+.aa1 span{
+	display: block;
+	width: 130px;
+	height: 95px;
+	background: #333333;
+	opacity: 0.3;
+	position: absolute;
+	top: 5px;
+	z-index: 2;
+}
+.aa2{
+	left: 5px;
+}
+#as1{
+	display: none;
+	width: 400px;
+	height: 160px;
+	background: url(../img/smoll-log/146761737824d6ba.jpg) no-repeat;
+	position: relative;
+}
+#as2{
+	display: block;
+	width: 400px;
+	height: 160px;
+	background: url(../img/smoll-log/1446631839f00969.jpg) no-repeat;
+	position: relative;
+}
+#as3{
+	display: none;
+	width: 400px;
+	height: 160px;
+	background: url(../img/smoll-log/14467060568cf34e.jpg) no-repeat;
+	position: relative;
+}
+
+.body_other_influence img{
+	display: block;
+	float: left;
+	margin-top: 5px ;
+}
+.body_other_influence .img1{
+	margin-left: 5px;
+}
+/*媒体报道*/
+.body_other_media{
+	height: 166px;
+	width: 370px;
+	float: left;
+}
+.body_other_media_a1{
+	display: block;
+	float: left;
+	width: 110px;
+	height: 108px;
+	background: url(../img/imgs/145224986158cbac.jpg) no-repeat;
+	position: relative;
+}
+
+/*品牌资讯*/
+.body_other_information{
+	height: 147px;
+	width: 370px;
+	float: left;
+}
+.body_other_information .body_other_information_h2{
+	margin-top: 8px;
+}
+.body_other_information_a1{
+	display: block;
+	float: left;
+	width: 110px;
+	height: 108px;
+	background: url(../img/imgs/144665557244d7ed.jpg) no-repeat
+}
+
+/*当季正在穿*/
+.body_now{
+	width: 100%;
+	height: 270px;
+    margin: 20px auto;
+}
+
+.body_now_line{
+	display: block;
+    width: 100%;
+    height: 34px;
+    text-align: center;
+}
+.body_now_line span{
+	display: inline-block;
+    margin: 0 auto;
+    padding: 0 10px;
+    font-family: "Microsoft YaHei";
+    font-size: 16px;
+    background: #fff;
+}
+
+.body_now_line:after{
+	display: block;
+    margin-top: -15px;
+    content: "";
+    height: 0;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.body_now_list{
+	display: block;
+    margin-bottom: 30px;
+}
+
+.body_now_list ul li{
+	float: left;
+    display: block;
+    width: 203px;
+    height: 216px;
+}
+
+.body_now_list_a1{
+	position: relative;
+    display: block;
+    width: 115px;
+    height: 115px;
+    margin: 0 auto 15px auto;
+    border-radius: 100%;
+    overflow: hidden;
+    border: 2px solid #e7e7e7;
+    background: #fff;
+}
+
+.body_now_list h5{
+	position: absolute;
+    top: 8px;
+    width: 115px;
+    font-size: 14px;
+    color: #666;
+    font-family: "Microsoft YaHei";
+    z-index: 2;
+    font-style: normal;
+    text-align: center;
+}
+
+.body_now_list_a1 img{
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 110px;
+    height: 110px;
+}
+
+.body_now_list_a2{
+	display: block;
+    width: 160px;
+    min-height: 129px;
+    text-align: center;
+    margin: 0 auto;
+    padding-left: 10px;
+}
+
+.body_now_list_a2 span{
+	display: inline-block;
+    width: 60px;
+    height: 25px;
+    color: #666;
+    line-height: 25px;
+    text-align: left;
+}
+
+/*拍鞋网尾部开始*/
+
+.footer{
+	width: 1349px;
+	height: 363px;
+}
+
+/*尾部上部*/
+
+.footer_top{
+	overflow: hidden;
+    width: 100%;
+    height: 75px;
+    background-color: #989ba3;
+}
+.footer_top ul{
+    width: 1220px;
+    margin: 15px auto 0 auto;
+}
+.footer_top li{
+	display: inline-block;
+    text-align: left;
+    height: 45px;
+}
+.footer_top_b{
+	float: left;
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    margin: 0 15px 0 0;
+    background: url(../img/smoll-log/paixie_icon.png) no-repeat;
+}
+.one{
+	background-position: 0 0;
+}
+.two{
+	background-position: -47px 0;
+}
+.three{
+	background-position: -94px 0;
+}
+.four{
+	background-position: -141px 0;
+}
+.five{
+	background-position: -188px 0;
+}
+
+.footer_top span{
+	display: inline-block;
+    margin: 0 15px 0 0;
+    height: 45px;
+    color: #fff;
+    font-weight: 100;
+    font-family: "Microsoft YaHei";
+    font-size: 16px;
+    line-height: 45px;
+} 
+
+.footer_top span a{
+	color: #fff;
+    font-size: 16px;
+}
+/*尾部主体*/
+
+.footer_body{
+	width: 1220px;
+    display: block;
+    margin: 0 auto;
+}
+.footer_body dl{
+	display: block;
+    text-align: left;
+    margin-top: 20px;
+    min-height: 167px;
+}
+.footer_body dd{
+	float: left;
+    display: inline-block;
+}
+.footer_body dl dd b {
+    font-size: 14px;
+    display: block;
+    margin-bottom: 5px;
+}
+.footer_body dl dd span {
+    display: block;
+    color: #7A7A7A;
+    margin: 3px 0;
+}
+.footer_body dl dd p {
+    display: block;
+    color: #7A7A7A;
+    line-height: 180%;
+}
+.footer_body dl dd .mcode,.footer_body dl dd .pcode{
+	position: relative;
+    margin-top: 5px;
+    display: block;
+    width: 60px;
+    height: 60px;
+    background: #eee url(../img/smoll-log/paixie_icon.png) no-repeat;
+    background-position: -184px -47px;
+}
+.footer_body dl dd .mcode {
+    background-position: -115px -47px;
+}
+.footer_body dl dd .pcode .pshare {
+    position: absolute;
+    display: block;
+    right: -169px;
+    top: 0;
+    width: 160px;
+}
+.footer_body dl dd .pcode .pshare a {
+    display: block;
+    width: 160px;
+    height: 25px;
+    background: url(../img/smoll-log/paixie_icon.png) no-repeat;
+}
+.footer_body dl dd .pcode .pshare .pshare_a1{
+	    background-position: -142px -368px;
+}
+.footer_body dl dd .pcode .pshare .pshare_a2{
+	    background-position: -142px -398px;
+}
+/*帮助*/
+.footer_body_help{
+	    width: 140px;
+}
+/*支付*/
+.footer_body_zhifu{
+	width: 147px;
+}
+/*售后*/
+.footer_body_serve{
+	width: 137px;
+}
+/*关于*/
+.footer_body_about{
+	width: 149px;
+}
+/*客服*/
+.footer_body_kefu{
+	width: 239px;
+}
+/*手机*/
+.footer_body_moble{
+	width: 152px;
+}
+/*微信*/
+.footer_body_weixin{
+	width: 129px;
+}
+
+/*尾部下部*/
+
+.footer .foot_nav, .footer .foot_copyright, .footer .foot_linkText, .footer .foot_linkImage {
+    width: 1220px;
+    display: block;
+    margin: 0 auto;
+}
+
+.foot_copyright {
+    height: 20px;
+    text-align: center;
+}
+.foot_copyright span {
+    display: inline-block;
+    margin: 0 auto;
+    color: #999;
+    padding: 0 10px;
+    text-align: center;
+    background-color: #fff;
+}
+.foot_copyright span i {
+    font-style: normal;
+    font-family: "Microsoft YaHei";
+}
+.foot_copyright:after {
+    display: block;
+    content: "";
+    height: 0;
+    border-bottom: 1px solid #f0f0f0;
+    margin-top: -12px;
+}
+
+.footer .foot_linkText {
+    position: relative;
+    display: block;
+    color: #A9A9A9;
+    height: 20px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.footer .foot_linkText .dolinkshow {
+    position: absolute;
+    display: inline-block;
+    right: 12px;
+    cursor: pointer;
+    top: 4px;
+    width: 12px;
+    height: 12px;
+    background: url(../img/smoll-log/paixie_icon.png) no-repeat -239px -17px;
+}
+
+.footer .foot_linkText a {
+    display: inline-block;
+    color: #A3A3A3;
+    text-align: left;
+    margin: 0 3px;
+}
+
+.footer .foot_linkImage {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.foot_linkImage a {
+    display: inline-block;
+    width: auto;
+    height: 34px;
+    background: url(../img/smoll-log/paixie_icon.png) no-repeat;
+}
+
+.foot_linkImage a.investment {
+    width: 113px;
+    background-position: 0 -47px;
+}
+
+.foot_linkImage a.ecommerce {
+    width: 90px;
+    background-position: 0 -86px;
+}
+
+.foot_linkImage a.alipay {
+    width: 104px;
+    background-position: 0 -125px;
+}
+
+.foot_linkImage a.scouring {
+    width: 90px;
+    background-position: 0 -241px;
+}
+
+.foot_linkImage a.honesty {
+    width: 98px;
+    background-position: 0 -203px;
+}
+
+.foot_linkImage a.commerce {
+    width: 90px;
+    background-position: 0 -280px;
+}
+
+.foot_linkImage a.report {
+    width: 105px;
+    background-position: 0 -319px;
+}
+
+.active{
+	
+}
+
+
+/*楼梯*/
+#LoutiNav {
+	position: fixed;
+    display: none;
+    top: 42%;
+    left: 10px;
+    width: 35px;
+    height: 171px;
+    background: url(../img/smoll-log/paixie_icon.png) no-repeat;
+    background-position: -50px -395px;
+	}
+	#LoutiNav ul li {
+	display: block;
+    width: 35px;
+    margin: 0 auto;
+    line-height: 14px;
+    height: 35px;
+    position: relative;
+	}
+	#LoutiNav ul li span {
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    color: black;
+    overflow: hidden;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 15px;
+    display: none;
+    z-index: 2;
+    position: absolute;
+    color: white;
+	}
+	.hover{
+		background:#5587F0;
+	}
+	.at{
+		display: block;
+	}

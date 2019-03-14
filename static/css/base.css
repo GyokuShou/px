@@ -1,0 +1,115 @@
+*{vertical-align: middle; border: 0;}
+body{min-width: 980px;}
+body,
+button{font: 12px tahoma, arial, sans-serif; font-family: Arial; color: #666; border: 0; background-color: #fff;}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+form,
+button,
+table,
+table th,
+table td,
+table tr,
+input{margin: 0; padding: 0;}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{font-size: 100%;}
+ul li{list-style-type: none;}
+input,
+select,
+textarea,
+label{font: 12px arial; outline: none; outline-width: 0;}
+table{border-spacing: 0; border-collapse: collapse;}
+img{border: 0;}
+a{cursor: pointer; text-decoration: none; color: #666;}
+.yh{font-family: 'Microsoft YaHei';}
+.red{color: #c00;}
+.green{color: #280;}
+.orange{font-family: Verdana; color: #ff5000;}
+.clear{float: none; clear: both; overflow: hidden; height: 0;}
+.hide{display: none;}
+.hidden{display: none;}
+.textcen{text-align: center;}
+.head-nav .head-menulist:after,
+.bodytop-mind .bodymind-three:after,
+.bodytop:after,
+.bodytuan .bodytuan-title:after,
+.bodytuan .bodytuan-alllist:after,
+.home-libox .home-lilist:after,
+.home-lilist-rightbox ul:after,
+.bodysbrand:after,
+.boxtext-news:after,
+.bodysdoing .bodysdoing-list:after,
+.bodysdoing-list ul:after,
+.foot-fiveicon .foot-fiveicon-ul:after,
+ .foot-nav:after,
+.head-sobox .formp:after,
+.bodytuan .bodytuan-alllist ul:after,
+.bodytop-right .bodytop-three:after,
+.imglistbox ul:after,
+.main:after,
+.colorbox:after,
+.sizebox:after,
+.buttonbox:after,
+.cart-title:after{display: block; visibility: hidden; clear: both; height: 0; content: '';}
+.allright-top li a,
+.login-cart a i,
+.login-paixie a i,
+.head_topLoginleft .mbicon,
+.head_topLoginleft .dologinBtn,
+.head-logo-so .head-logo,
+.head-sobox .formp .hea-sotext,
+.nav-boxshow .nav-right .closebtn,
+.head-menulist .head-menushow i.hmsicon,
+.bodytopleft-menu ul li span i,
+.allleft-fixed ul,
+.bodytop-three a .top-icona,
+.bodytop-three a .top-iconb,
+.bodytop-three a .top-iconc,
+.bodytop-right .bodytop-title a.on,
+.bodytuan .bodytuan-title .turn-dongding,
+.bodytuan .bodytuan-title span .addicon,
+.bodytuan .bodytuan-title .linebox,
+.leftbox-a .leftbox-open i,
+.cart-box span,
+.right-code,
+.right-gotop,
+.code-box span,
+.foot-fiveicon .foot-fiveicon-ul li i,
+ .foot-nav ul li span,
+.foot-nav ul .f-wechat a,
+ .foot-linktext .dolinkshow,
+ .foot-linkimg a,
+.scrollcart b,
+.login-header .logo{background: url('../images/paixie_icon.png') no-repeat;}
+.home-libox .title-bgincon{position: absolute; bottom: -9px; left: 248px; display: block; width: 142px; height: 10px; background: url('../images/px_title_bg.png') no-repeat;}
+.topic-slidead .dots li,
+.topic-slidead .prev,
+.topic-slidead .next{background: url('../images/home_slide_icon.png') no-repeat;}
+.register-area .side a,
+.login-area .username i,
+.login-area .password i,
+.login-area .other-login p a,
+.login-area .wechatbox p a i,
+.way a{background: url('../images/login.3.1.png') no-repeat;}
+.main i,
+.pricebox{background: url('../images/product.4.0.png') no-repeat;}
+.cart-title i{background: url('../images/cart.3.2.gif') no-repeat;}
+.num-add,
+.num-minus{background: url('../images/cart.3.3.png') no-repeat;}

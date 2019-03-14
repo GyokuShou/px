@@ -1,0 +1,22 @@
+body{font-family: Microsoft YaHei; overflow-y: scroll; color: #333; background-color: #f5f5f5;}
+a{cursor: pointer; text-decoration: none; color: #fff;}
+/*register-area*/
+.register-area{overflow: hidden; padding: 40px 30px 58px 30px;}
+.register-area .form{float: left; width: 670px; border-right: 1px dashed #d2d2d2;}
+.form div{font-size: 0;}
+.register-area .form lable{font-size: 14px; display: inline-block; width: 80px; cursor: default;text-align: right; vertical-align: middle;}
+.register-area .base-text{margin: 14px 5px;}
+.register-area .v-error,
+.register-area .v-info,
+.register-area .v-text{width: 271px; margin-left: -6px;}
+.register-area .v-ok{width: 271px; margin-left: 6px;}
+.register-area .base-text135{width: 135px;}
+.register-area .base-text135 input{width: 102px;}
+/*.register-area .codearea{display: none;}*/
+.register-area .codearea p{font-size: 14px; line-height: 36px; position: relative; display: inline-block; width: 128px; margin: 5px 5px 5px 0; padding: 0 10px; text-align: center; vertical-align: middle; color: #333; border: 1px solid #333; border-radius: 2px;}
+.register-area .agreement lable{font-size: 12px; line-height: 22px; width: auto; margin-left: 85px; text-align: left; color: #878787;}
+.register-area .agreement input{display: inline-block; vertical-align: middle;}
+.register-area .blue-button{font-size: 16px; line-height: 40px; display: inline-block; width: 272px; height: 40px; margin: 14px 0 0 85px; padding: 0 10px; text-align: center; vertical-align: middle; color: #fff; border-radius: 2px; background-color: #0487df;}
+/*side*/
+.side{line-height: 40px; display: inline; float: left; margin-left: 30px; color: #919191;}
+.register-area .side a{line-height: 25px; display: inline-block; width: 100px; height: 25px; margin-bottom: 4px;vertical-align: middle; text-indent: 30px; letter-spacing: 2px; color: #fff; background-position: -118px 0;}

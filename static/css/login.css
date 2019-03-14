@@ -1,0 +1,60 @@
+body{font-family: Microsoft YaHei; overflow-y: scroll; color: #333; background-color: #f5f5f5;}
+/*login-area*/
+.login-area{position: relative;overflow: hidden; height: 362px; padding: 30px 63px 30px 63px;}
+.login-area .ad{float: left; width: 480px; height: 300px; margin-top: 37px;}
+.login-area .form{float: right; overflow: hidden; width: 292px;}
+.login-area .form a:hover{text-decoration: underline;}
+.login-area .form p{line-height: 20px; padding: 8px 0;}
+.login-area .form p strong{font: 16px Microsoft YaHei;}
+.login-area .form p a,
+.login-content .form p span{float: right;}
+.login-area .form p span{margin-right: 10px; color: #b7b7b7;}
+.login-area .base-text{margin: 0;}
+.login-area .username i,
+.login-area .password i{position: absolute; top: 2px; left: 0; display: block; width: 34px; height: 34px;}
+.login-area .password i{top: 0; background-position: 0 -40px;}
+.login-area .username input,
+.login-area .password input{width: 227px; margin-bottom: 4px; margin-left: 35px;}
+.login-area .v-ok,
+.login-area .v-error,
+.login-area .v-info,
+.login-area .v-text{line-height: 28px; display: block; height: 28px; padding: 0; border: 0; background: #fff;}
+.login-area .v-error{color: #dd5044;}
+.login-area .auto-login{line-height: 20px; height: 20px; color: #b7b7b7;}
+.login-area .auto-login input{display: inline-block; vertical-align: middle;}
+.login-area .auto-login a{float: right;}
+.login-area .orange-button{font-family: Microsoft YaHei; font-size: 16px; line-height: 40px; display: block; width: 272px; height: 40px; margin: 14px 0; padding: 0 10px; text-align: center; color: #fff; border: 0; border-radius: 2px; background: #f60;}
+.login-area .auto-login a.orange-button:hover{text-decoration: none;}
+.login-area .other-login{line-height: 24px; color: #b7b7b7;}
+.login-area .other-login p{overflow: hidden; margin-right: -11px; padding: 5px 0 0 3px;}
+.login-area .other-login p a{float: left; overflow: hidden; width: 20px; height: 19px; margin-top: 0; margin-right: 10px;}
+.login-area .other-login p a.qq{background-position: 0 -251px;}
+.login-area .other-login p a.alipay{background-position: -25px -251px;}
+.login-area .other-login p a.sina{background-position: -49px -251px;}
+.login-area .other-login p a.renren{background-position: -77px -251px;}
+.login-area .other-login p a.wangyi{background-position: -101px -251px;}
+.login-area .other-login p a.xunlei{background-position: -125px -251px;}
+.login-area .other-login p a.baidu{background-position: -149px -251px;}
+.login-area .other-login p a.qh360{background-position: -173px -251px;}
+.login-area .other-login p a.wechat{background-position: -197px -251px;}
+.login-area .other-login p a.wanlitong{background-position: -221px -251px;}
+/*图标hover*/
+.login-area .other-login p a.qq:hover{background-position: 0 -275px;}
+.login-area .other-login p a.alipay:hover{background-position: -25px -275px;}
+.login-area .other-login p a.sina:hover{background-position: -49px -275px;}
+.login-area .other-login p a.renren:hover{background-position: -77px -275px;}
+.login-area .other-login p a.wangyi:hover{background-position: -101px -275px;}
+.login-area .other-login p a.xunlei:hover{background-position: -125px -275px;}
+.login-area .other-login p a.baidu:hover{background-position: -149px -275px;}
+.login-area .other-login p a.qh360:hover{background-position: -173px -275px;}
+.login-area .other-login p a.wechat:hover{background-position: -197px -275px;}
+.login-area .other-login p a.wanlitong:hover{background-position: -221px -275px;}
+.login-area .wechatbox{position: relative;display: none; float: right; width: 300px; height: 257px; text-align: center; color: #999;}
+.login-area .wechatbox h2{font-size: 16px; font-weight: normal;}
+.login-area .wechatbox img{display: block; margin: 18px auto 14px; border: 1px solid #f4f4f4;}
+.login-area .wechatbox p a{position: relative; padding: 0 5px; color: #999;}
+.login-area .wechatbox p a i{position: absolute; top: -5px; left: 97px; display: block; width: 9px; height: 5px; background-position: -179px -30px;}
+.login-area .wechatbox p a span{line-height: 26px; position: absolute; top: 25px; left: -80px; width: 145px; height: 26px; border: 1px solid #fdcb99; background-color: #ffffea;}
+.way{position: absolute; right: 0; bottom: 0; width: 60px; height: 60px;}
+.way a{display: block; width: 100%; height: 100%;background-position: -0 -299px;}
+.way a.pc{background-position: -65px -299px;}

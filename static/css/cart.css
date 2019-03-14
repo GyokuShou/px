@@ -1,0 +1,38 @@
+.head-menulist .head-menushow{z-index: -1; background-color: #fff;}
+.head-menulist .head-menushow span.hmsicon{color: #333;}
+.head-menulist .head-menushow i.hmsicon{background-position: -321px -923px;}
+.bodytopleft-menu{display: none;}
+.cart-bodys{width: 1200px; margin: 22px auto;}
+.cart-title{width: 100%;}
+.cart-title h1{font-size: 23px; float: left;color: #333;}
+.cart-title span{float: right;}
+.cart-title i{display: inline-block; width: 20px; height: 25px; margin-right: 5px; background-position: -236px -40px;}
+.cart-box-current{width: 100%; margin: 10px 0; text-align: left;}
+.cart-box-current tr:first-child{border-top: 2px solid #c6c6c6; background-color: #eee;}
+.cart-box-current th{height: 35px;}
+.cart-box-current tr{border-bottom: 1px solid #e7e7e7; background-color: #fffcf1;}
+.cart-box-current tr:first-child,
+.cart-box-current tr:last-child{border-bottom: none;}
+.cart-box-current td{padding: 10px 0;}
+.cart-box-current .box-chk{width: 19%;padding-left: 1%;}
+.cart-box-current .box-chk input{margin: 0;}
+.cart-box-current .box-name{width: 25%;}
+.cart-box-current .box-price{width: 15%;}
+.cart-box-current .box-num{width: 15%;}
+.cart-box-current .box-allprice{width: 15%;}
+.cart-box-current .box-operate{width: 5%;}
+.cart-box-current .tr2-input{float: left;margin: 30px 10px 0 13px;}
+.cart-box-current img{float: left; width: 80px; max-width: 80px;height: 80px; max-height: 80px;}
+.cart-box-current ul{float: left; margin: 5px 0 0 5px;}
+.cart-box-current .num-text{line-height: 16px;float: left; width: 30px; height: 14px; padding: 4px;text-align: center;border: 1px solid #cdcdcd;}
+.num-add,
+.num-minus{float: left; overflow: hidden;width: 21px; height: 24px; background-position: -264px -11px;}
+.num-add{background-position: -264px -37px;}
+.area-go-pay{font-size: 14px; line-height: 48px; position: relative; height: 48px; margin-top: 15px; padding-right: 190px;text-align: right; border: 1px solid #e0dfdf; background: #f5f5f5;}
+.xcartall{line-height: 48px; float: left; padding: 0;}
+.area-go-pay .xcartall a{padding: 0; color: #333;}
+.js-select-all{float: left;margin: 18px 10px 0 13px;}
+.area-go-pay a{font-size: 12px; float: left; padding: 0 5px;color: #1859c5;}
+.area-go-pay b{font-size: 18px; font-weight: 100;}
+.area-go-pay strong{font-size: 22px; font-weight: normal;}
+.area-go-pay a.go-pay{font-family: '微软雅黑'; font-size: 20px; position: absolute; top: -1px; right: -1px; float: none; width: 153px; height: 50px; padding: 0; text-align: center; color: #fff; background: #ff5000;}

@@ -1,0 +1,693 @@
+
+body{
+	position: relative;
+}
+
+body,html{
+	margin: 0 auto;
+	padding: 0;
+	width: 100%;
+	min-width: 980px;
+}
+
+strong, b {
+    font-weight: bold;
+}
+
+body,ul,li,p,h1,h2,h3,h4,h5,h6,img,br,hr,table,tr,td,dl,dt,dd,form {
+    margin: 0;
+    padding: 0;
+}
+
+form,input{
+	border: none;
+}
+
+body { 
+    font: 12px \5b8b\4f53,tahoma,arial,sans-serif;
+    font-size: 12px;
+    color:  #666;
+}
+
+ul,li {
+    list-style: none;
+}
+
+img {
+    border: none;
+}
+/*一般链接*/
+a {
+    text-decoration: none;
+    color: #555;
+}
+a: hover {
+    color: ;
+}
+
+
+
+/*!--拍鞋网侧边栏开始*/
+
+#allrightshow{
+	z-index: 1000;
+	width: 34px;
+	height: 100%;
+	background: #989ba3;
+	position: fixed;
+	right: 0 ;
+}
+
+.allrightshow_top{
+	position: absolute;
+    display: block;
+    width: 34px;
+    top: 278px;
+}
+
+.allrightshow_top > span{
+	position: relative;
+    margin-bottom: 10px;
+    display: block;
+}
+
+
+.allrightshow_top_buycar > a{
+	display: block;
+	position: relative;
+    font-family: "Microsoft YaHei";
+    overflow: hidden;
+    height: 122px;
+}
+
+.allrightshow_top_buycar_s1{
+	display: block;
+	width: 35px;
+	height: 35px;
+	background: url(../img/smoll-log/paixie_icon.png) no-repeat;
+    background-position: 0 -756px;
+}
+
+.allrightshow_top_buycar > a > .allrightshow_top_buycar_s2{
+	display: block;
+    width: 20px;
+    font-size: 12px;
+    color: #fff;
+    margin: 3px 6px 0 auto;
+    font-family: "Microsoft YaHei";
+    line-height: 18px;
+    text-align: center;
+}
+
+.allrightshow_top_buycar > a > i{
+	display: block;
+    width: 20px;
+    height: 20px;
+    line-height: 140%;
+    font-family: Verdana;
+    font-style: normal;
+    overflow: hidden;
+    box-sizing: border-box;
+    border-radius: 20px;
+    font-size: 14px;
+    text-align: center;
+    margin: 3px auto;
+    color: #fff;
+    background: #ff5000;
+}
+
+.allrightshow_top_buycar_thing{
+	height: 200px;
+	width: 0px;
+	background: white;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: -5;
+	overflow: hidden;
+	border: 1px solid #989ba3;
+}
+
+.allrightshow_top_buycar_thing > span{
+	display: block;
+	width: 120px;
+	height: 100px;
+	margin: 20px auto;
+	background: url(../img/smoll-log/paixie_icon.png) no-repeat;
+    background-position: -74px -624px;
+}
+
+.allrightshow_top_buycar_thing > p{
+	font-size: 12px;
+	width: 180px;
+	line-height: 2;
+	color: #b4b4b4;
+	margin: 0 auto;
+	text-align: center;
+}
+.allrightshow_top_buycar_thing > p > a{
+	font-size: 12px;
+	color: #769cdc;
+}
+
+.no_show{
+    height: 35px;
+    width: 77px;
+    font-size:14px ;
+    background: #000;
+    opacity: 0.8;
+    color: #fff;
+    line-height: 35px;
+    font-family: "Microsoft YaHei";
+    text-align: center;
+	position: absolute;
+    top: 0;
+    left: 34px;
+    z-index: -1;
+}
+
+.allrightshow_top_favorable > a {
+	background: url(../img/smoll-log/paixie_icon.png) no-repeat;
+	display: block;
+    height: 35px;
+    background-position: 0 -888px;
+}
+
+
+
+.allrightshow_top_record > a {
+    display: block;
+    height: 35px;
+    background: url(../img/smoll-log/paixie_icon.png) no-repeat;
+    background-position: 0 -933px;
+}
+
+
+.allrightshow_top_service > a{
+	display: block;
+    height: 35px;
+    background: url(../img/smoll-log/paixie_icon.png) no-repeat;
+    background-position: 0 -979px;
+}
+
+
+
+.allrightshow_floor{
+	    position: absolute;
+    	bottom: 0px;
+    	margin: 0 auto;
+    	width: 34px;
+}
+
+.allright_floor span {
+    position: relative;
+    display: block;
+}
+
+.top_aa{
+	display: block;
+    height: 35px;
+    background: url(../img/smoll-log/paixie_icon.png) no-repeat;
+    background-position: 0 -1084px;
+}
+
+.no_show1{
+	width: 0px;
+	height: 182px;
+	overflow: hidden;
+	position: absolute;
+    display: block;
+    left: 0px;
+    bottom: 40px;
+    z-index: -1;
+    background: url(../img/smoll-log/paixie_icon.png) no-repeat;
+    background-position: -198px -624px;
+}
+
+.allrightshow_floor_top a {
+	display: block;
+    height: 35px;
+    background: url(../img/smoll-log/paixie_icon.png) no-repeat;
+    background-position: 0 -1129px;
+}
+
+.allrightshow_floor_top  div {
+	width: 77px;
+    height: 35px;
+    background: #333;
+    opacity: 0.8;
+    color: white;
+    line-height: 35px;
+    font-family: "Microsoft YaHei";
+    text-align: center;
+    position: absolute;
+    display: block;
+    z-index: -1;
+    bottom: 0px;
+}
+
+
+
+
+/*头部开始*/
+
+.head{
+	/*z-index: 130;*/
+    background: #fff;
+    text-align: left;
+    position: relative;
+    width: 100%;
+    line-height: 180%;
+    box-sizing: border-box;
+}
+
+.head_top{
+	position: relative;
+	/*z-index: 950;*/
+    width: 100%;
+    height: 36px;
+    background: #fafafa;
+    box-sizing: border-box;
+    border-bottom: 2px solid #eee;
+}
+
+.head_topline{
+	width: 1200px;
+	height: 36px;
+	margin: 0 auto;
+	/*border: 1px solid;*/
+}
+
+/*--头----第一部分*/
+
+/*----------------头第一部分左部-----*/
+.head_top_left{
+	display: block;
+	width: 323px;
+	height: 36px;
+	float: left;
+	/*border: 1px solid black;*/
+}
+
+.head_top_left_a1{
+	display: block;
+	float: left;
+	width: 68px;
+	height: 20px;
+	margin-top: 10px ;
+	margin-right: 10px;
+	background: url(../img/smoll-log/paixie_icon.png) no-repeat;
+	background-position: -251px -51px;
+}
+
+.head_top_left_s1{
+	display: block;
+	float: left;
+    height: 36px;
+    line-height: 35px;
+    font-family: Arial;
+    color: #747474;
+    font-size: 12px;
+}
+
+.head_top_left_a2{
+	display: block;
+	float: left;
+	width: 67px;
+    height: 20px;
+    margin-right: 10px;
+    margin-top: 7px;
+    background: url(../img/smoll-log/paixie_icon.png) no-repeat;
+    background-position: -247px -75px;
+}
+
+.head_top_left_a3{
+	display: block;
+	float: left;
+	width: 48px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 12px;
+    color: #666;
+    padding: 0;
+}
+
+.head_top_left_a3:hover{ 	
+	color: orangered;
+}
+
+
+/*-------头第一部分---------的右边*/
+
+.head_top_right{
+	display: block;
+	width: 402px;
+	height: 36px;
+	/*border: 1px solid;*/
+	float: right;
+}
+
+.head_top_right_a1{
+	position: relative;
+    display: block;
+    width: 82px;
+    height: 34px;
+    border: 1px solid #fafafa;
+    border-bottom: none;
+    float: left;
+}
+
+.head_top_right_a1_i{
+	display: block;
+	float: left;
+	margin-top: 8px ;
+	margin-left: 8px;
+    width: 21px;
+    height: 20px;
+    background: url(../img/smoll-log/paixie_icon.png) no-repeat;
+    background-position: -250px -98px;
+}
+
+.head_top_right_a1_s1:hover{
+	color: orangered;	
+}
+
+.head_top_right_a1_s1{
+	display: block;
+	float: left;
+	margin-left: 3px;
+	font-size: 12px;
+	height: 36px;
+	line-height: 36px;
+	color: #666;
+}
+
+.head_top_right_a1_s2{
+	display: block;
+	float: left;
+	font-size: 15px;
+	margin-left: 1px;
+	font-weight: 600;
+	height: 36px;
+	line-height: 36px;
+	color: orangered;
+}
+
+.head_top_right_go{
+	width: 300px;
+	height: 100px;
+	position: absolute;
+	background: white;
+	border: 1px solid #E7E7E7;
+	border-top: none;
+	margin-top: 36px;
+	z-index: 2;
+	display: none;
+}
+
+.head_top_right_go p{
+	line-height: 100px;
+	text-align: center;
+	font-weight: 600;
+	color: #ff5000;
+}
+/*第一部分后面三个*/
+
+
+
+.head_top_right_a{
+	display: block;
+	float: left;
+	font-size: 12px;
+	height: 36px;
+	line-height: 36px;
+	text-align: center;
+	color: #666;
+}
+
+.head_top_right_a:hover{
+	color: orangered;
+}
+
+.xie{
+	width: 78px;
+}
+
+.message{
+	width: 50px;
+}
+
+.jl{
+	width: 78px;
+}
+
+.web{
+	width: 78px;
+}
+.head_top_right_list2{
+	width: 78px;
+	position: relative;
+}
+.head_top_right_d3{
+	width: 78px;
+	float: left;
+	position: relative;
+}
+
+.head_top_right_b{
+	display: block;
+	width: 3px;
+	height: 36px;
+	line-height: 36px;
+	text-align: center;
+	font-size: 12px;
+	color:#DDD; 
+	float: left;
+}
+
+.head_top_right_d2{
+	position: relative;
+	width: 78px;
+	float: left;
+	margin-left: -3px;
+}
+
+.head_top_right_list1{
+	display: none;
+	width: 78px;
+	position: absolute;
+	background: white;
+	border: 1px solid #e7e7e7;
+	right:0;
+	top: 0;
+}
+
+.head_top_right_list1 > li > a{
+	display: block;
+	width: 78px;
+	height: 36px;
+	line-height: 36px;
+	text-align: center;
+	color: #666;
+	font-size: 12px;
+}
+
+.head_top_right_list1 > li > a:hover{
+	color: orangered;
+}
+
+.head_top_right_list_span{
+	
+}
+
+.head_top_right_list2{
+	z-index: 3;
+	display: none;
+	width: 78px;
+	position: absolute;
+	background: white;
+	right:0;
+	top: 0;
+}
+
+.head_top_right_list2 > li > a{
+	display: block;
+	float: left;
+	width: 78px;
+	height: 36px;
+	line-height: 36px;
+	text-align: center;
+}
+
+.head_top_right_list2>span{
+	
+}
+
+/*---头----第二部分*/
+
+.head_logo{
+	width: 1220px;
+    margin: 0 auto;
+    height: 107px;
+    /*border: 1px solid;*/
+}
+
+/*---头----第二部分左部*/
+
+.head_logo_a1{
+	display: block;
+	float: left;
+    display: inline-block;
+    margin-top: 21px;
+    width: 205px;
+    height: 70px;
+    background: url(../img/smoll-log/paixie_icon.png) no-repeat;
+    background-position: -115px -117px;
+}
+
+.head_logo_a2{
+	float: left;
+    display: inline-block;
+    height: 66px;
+    width: 120px;
+    margin: 21px 60px 0 60px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.head_logo_i{
+	width: 100%;
+}
+
+.head_logo_from{
+	display: block;
+	float: left;
+	width: 535px;
+	height: 34px;
+	border: 2px solid #ff5000;
+	margin-top: 35px;
+	outline: none;
+	outline-width: 0px;
+}
+
+.head_logo_text{
+	width: 400px;
+	height: 32px;
+	float: left;
+	padding-left:34px ;
+	background: url(../img/smoll-log/paixie_icon.png) no-repeat;
+	background-position: -275px -18px;
+	overflow: hidden;
+}
+
+.head_logo_submit{
+	
+	width: 100px;
+	height: 34px;
+	font-family: "Microsoft YaHei";
+	font-size: 16px;
+	float: left;
+	color: white;
+	background-color: #ff5000;
+	cursor: pointer;
+}
+
+.head_logo_div .T{
+	color: #f01a1a;;
+}
+
+.head_logo_div{
+	float: left;
+	width: 534px;
+	height: 16px;
+}
+.head_logo_div a{
+	display: block;
+	float: left;
+	font-size: 12px;
+	margin: 0 10px 0 0;
+}
+
+
+/*--------头--------第三部分*/
+
+.head_nav{
+	width: 1220px;
+	height: 35px;
+	position: relative;
+	margin: 0 auto;
+}
+
+.head_nav_commodity{
+	width: 220px;
+	height: 35px;
+	float: left;
+	line-height: 35px;
+	background: orangered;
+}
+
+.head_nav_commodity > span{
+	
+	display: block;
+	float: left;
+	width: 20px;
+    height: 20px;
+	background: url(../img/smoll-log/paixie_icon.png) no-repeat;
+	background-position: -290px -101px;
+	position: absolute;
+    top: 8px;
+    left: 13px;
+    display: inline-block;
+}
+
+.head_nav_commodity > b{
+	display: block;
+	float: left;
+	color: white;
+	height: 35px;
+	width: 100px;
+	margin-left:35px;
+}
+
+.head_nav_click  a{
+	display: block;
+	font-size: 16px;
+	font-family: "Microsoft YaHei";
+	width: 72px;
+	height: 35px;
+	float: left;
+	line-height: 35px;
+	text-align: center;
+}
+.head_nav_click  a:hover{
+	color: #333333;
+}
+
+.head_nav_code{
+	position: absolute;
+    right: 0;
+    overflow: hidden;
+    bottom: 3px;
+    width: 148px;
+    height: 119px;
+    background: #fff;
+}
+
+.head_nav_thread{
+	width: 100%;
+	border-bottom:3px solid orangered ;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
