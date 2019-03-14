@@ -8,5 +8,5 @@ urlpatterns = [
    url(r'^checkname/$', views.checkname, name='checkname'),
    url(r'^logout/$', views.logout, name='logout'),
    url(r'^login/$', views.login, name='login'),
-   
+   url(r'^getvericode/$', views.getvericode, name='getvericode'),
 ]

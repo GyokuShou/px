@@ -8,6 +8,7 @@ from django.shortcuts import render, redirect
 
 # Create your views here.
 from pc.models import Carousel, User
+from pc.vericode import Vericode
 
 
 def index(request):
@@ -95,3 +96,11 @@ def login(request):
             return render(request,'mainWeb.html',context={'user':user})
         else:
             return render(request,'login.html',context={'error':'用户名或密码错误'})
+
+
+def getvericode(request):
+    vc = Vericode()
+    img,code = vc.create_img()
+    response = HttpResponse(img,'image/png')
+    response.set_cookie('vericode',code)
+    return response
