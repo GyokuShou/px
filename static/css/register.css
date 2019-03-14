@@ -9,7 +9,7 @@ a{cursor: pointer; text-decoration: none; color: #fff;}
 .register-area .v-error,
 .register-area .v-info,
 .register-area .v-text{width: 271px; margin-left: -6px;}
-.register-area .v-ok{width: 271px; margin-left: 6px;}
+.register-area .v-ok{width: 271px; margin-left: -6px;}
 .register-area .base-text135{width: 135px;}
 .register-area .base-text135 input{width: 102px;}
 /*.register-area .codearea{display: none;}*/
@@ -20,3 +20,4 @@ a{cursor: pointer; text-decoration: none; color: #fff;}
 /*side*/
 .side{line-height: 40px; display: inline; float: left; margin-left: 30px; color: #919191;}
 .register-area .side a{line-height: 25px; display: inline-block; width: 100px; height: 25px; margin-bottom: 4px;vertical-align: middle; text-indent: 30px; letter-spacing: 2px; color: #fff; background-position: -118px 0;}
+#error-tip{color: red;font-size: 24px;margin-left: 5rem;}

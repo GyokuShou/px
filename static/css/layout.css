@@ -196,5 +196,6 @@
 .login-content a{font-size: 12px; color: #08c;}
 .login-content .v-error{border-color: #f9dddd; background: #fdeaea;}
 .login-content .v-info{border-color: #ddf3ff; background: #eef9ff;}
+.login-content .v-ok{border-color: #2fff91; background: #65ffad;}
 /*login-footer*/
 .login-footer{line-height: 20px; width: 980px; margin: 0 auto; padding-top: 30px; text-align: center; color: #668686;}

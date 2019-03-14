@@ -60,7 +60,6 @@ $(function(){
         } else {
             $.cookie("name", $regusername);
             $.cookie("password", $regpassword);
-            alert("注册成功!");
             window.location.href = "login.html";
         }
     });

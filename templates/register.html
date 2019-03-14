@@ -1,14 +1,14 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>欢迎注册</title>
-    <link rel="stylesheet" type="text/css" href="css/base.css">
-    <link rel="stylesheet" type="text/css" href="css/layout.css">
-    <link rel="stylesheet" type="text/css" href="css/register.css">
-    <script src="js/jquery-1.12.3.js"></script>
-    <script src="js/jquery.cookie.js"></script>
-    <script src="js/user.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/layout.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/register.css' %}">
+
 </head>
 <body>
     <div class="login-header">
@@ -17,56 +17,62 @@
     </div>
     <div class="login-content">
         <div class="register-area">
+            <form action="{% url 'pc:register' %}" method="post">
             <div class="form">
+
+                {% csrf_token %}
                 <div>
                     <lable>账户名：</lable>
                     <div class="base-text">
-                        <input class="login-text" type="text" placeholder="邮箱/手机号" />
+                        <input class="login-text" type="text" placeholder="邮箱/手机号" name="name" id="name" />
                     </div>
-                    <span>
+                    <span id="sp-name">
                         请输入邮箱/手机号
                     </span>
                 </div>
                 <div>
                     <lable>设置密码：</lable>
                     <div class="base-text">
-                        <input class="login-text" type="password" />
+                        <input class="login-text" type="password" name="password" id="password" />
                     </div>
-                    <span>
+                    <span id="sp-password">
                         6-20位字符，可使用字母、数字或符号的组合
                     </span>
                 </div>
                 <div>
                     <lable>确认密码：</lable>
                     <div class="base-text">
-                        <input class="login-text" type="password" />
+                        <input class="login-text" type="password" id="psd" />
                     </div>
-                    <span>
+                    <span id="sp-psd">
                         请再次输入密码
                     </span>
                 </div>
                 <div class="codearea">
                     <lable>验证码：</lable>
                     <div class="base-text base-text135">
-                        <input class="login-text" type="text" placeholder="验证码"/>
+                        <input class="login-text" type="text" placeholder="验证码" id="vericode" />
                     </div>
-                    <p>3324</p>
+                    <p><img src="" alt=""></p>
 
-                    <span>
-                        <div></div>
+                    <span id="sp-vericode">
+{#                        <div></div>#}请输入验证码
                     </span>
                 </div>
                 <div class="agreement">
                     <lable>
-                        <input type="checkbox" checked/>
+                        <input type="checkbox" checked id="checkbox" />
                         我已阅读并同意
                         <a href="#">《拍鞋服务协议》</a>
                     </lable>
                 </div>
-                <a class="blue-button" href="javascript:;">
+                <p id="error-tip">{{ error }}</p>
+                <a class="blue-button">
                     立即注册
                 </a>
+
             </div>
+            </form>
             <div class="side">
                 我已有拍鞋网账户
                 <br>
@@ -80,3 +86,8 @@
     </div>
 </body>
 </html>
+
+<script src="{% static 'js/jquery-1.11.3.min.js' %}"></script>
+<script src="{% static 'js/jquery.cookie.js' %}"></script>
+{#<script src="{% static 'js/user.js' %}"></script>#}
+<script src="{% static 'js/register.js' %}"></script>
