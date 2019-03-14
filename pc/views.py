@@ -4,7 +4,7 @@ import time
 
 from django.core.cache import cache
 from django.http import HttpResponse, JsonResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 # Create your views here.
 from pc.models import Carousel, User
@@ -12,36 +12,30 @@ from pc.models import Carousel, User
 
 def index(request):
     token = request.session.get('token')
+    response_data = {
+        'user': None,
+    }
     if token:
         userid = cache.get(token)
-        response_data = {
-            'user': None,
-        }
         if userid:
             user = User.objects.get(pk=userid)
             response_data['user'] = user
-
-    return render(request,'mainWeb.html',context=response_data)
-
-
     carousel = Carousel.objects.all()
-    response_data = {
-        'carousel': carousel,
-    }
+    response_data['carousel'] = carousel
     return render(request,'mainWeb.html',context=response_data)
 
 
-def generate_password(password):
-    m = hashlib.sha256()
-    m.update(password.encode('utf-8'))
-    return m.digest()
+def generate_password(param):
+    sha1 = hashlib.sha256()
+    sha1.update(param.encode('utf-8'))
+    return sha1.hexdigest()
 
 
 def generate_token():
     token = str(time.time()) + str(random.random())
-    m = hashlib.md5()
-    m.update(token.encode('utf-8'))
-    return m.digest()
+    ps = hashlib.sha1()
+    ps.update(token.encode('utf-8'))
+    return ps.hexdigest()
 
 
 def register(request):
@@ -54,12 +48,12 @@ def register(request):
 
         user = User.objects.filter(name=name)
         if user.exists():
-            return render(request,'register.html',context={'error':'注册失败，请重新注册'})
+            return render(request,'register.html',context={'error':'用户名刚刚被截胡了'})
 
         try:
             user = User()
             user.name = name
-            user.password
+            user.password = password
             user.save()
 
             token = generate_token()
@@ -67,6 +61,7 @@ def register(request):
             request.session['token'] = token
             return render(request,'mainWeb.html')
         except Exception as e:
+            print(e)
             return render(request,'register.html',context={'error':'注册失败，请重新注册'})
 
 
@@ -80,3 +75,23 @@ def checkname(request):
     else:
         response_data['status'] = 1
     return JsonResponse(response_data)
+
+
+def logout(request):
+    request.session.flush()
+    return redirect('pc:index')
+
+
+def login(request):
+    if request.method == 'GET':
+        return render(request,'login.html')
+    elif request.method == 'POST':
+        name = request.POST.get('name')
+        password = generate_password(request.POST.get('password'))
+
+        user = User.objects.filter(name=name).filter(password=password)
+        if user.exists():
+            user = user.first()
+            return render(request,'mainWeb.html',context={'user':user})
+        else:
+            return render(request,'login.html',context={'error':'用户名或密码错误'})

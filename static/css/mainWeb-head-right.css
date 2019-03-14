@@ -41,8 +41,8 @@ a {
     text-decoration: none;
     color: #555;
 }
-a: hover {
-    color: ;
+a:hover {
+    color: #000000;
 }
 
 
@@ -336,6 +336,17 @@ a: hover {
 	color: orangered;
 }
 
+.head_top_left_a4{
+	display: block;
+	float: left;
+	/*width: 48px;*/
+	width: auto;
+    height: 35px;
+    line-height: 35px;
+    font-size: 12px;
+    color: #666;
+    padding: 0 5px;
+}
 
 /*-------头第一部分---------的右边*/
 

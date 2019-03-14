@@ -80,8 +80,14 @@
                 <span class="head_top_left">
                     <a href="#" class="head_top_left_a1"></a>
                     <span class="head_top_left_s1">您好，欢迎来拍鞋网！</span>
-                    <a href="#" class="head_top_left_a2"></a>
-                    <a href="{% url 'pc:register' %}" target="_blank" class="head_top_left_a3">免费注册</a>
+
+                    {% if user %}
+                        <a class="head_top_left_a4">{{ user.name }}</a>
+                        <a class="head_top_left_a4" href="{% url 'pc:logout' %}">注销</a>
+                    {% else %}
+                        <a href="{% url 'pc:login' %}" class="head_top_left_a2"></a>
+                        <a href="{% url 'pc:register' %}" target="_blank" class="head_top_left_a3">免费注册</a>
+                    {% endif %}
                 </span>
 
                 <!--右-->
