@@ -53,10 +53,10 @@
                     <div class="base-text base-text135">
                         <input class="login-text" type="text" placeholder="验证码" id="vericode" name="vericode" />
                     </div>
-                    <p><img src="" alt="" id="vc-img" onclick="getvc()"></p>
+                    <p id="inn-vericode-p"><img src="" alt="" id="vc-img" onclick="getvc()"></p>
 
                     <span id="sp-vericode">
-{#                        <div></div>#}请输入验证码
+                        请输入验证码
                     </span>
                 </div>
                 <div class="agreement">
@@ -67,9 +67,9 @@
                     </lable>
                 </div>
                 <p id="error-tip">{{ error }}</p>
-                <a class="blue-button">
+                <span class="blue-button">
                     立即注册
-                </a>
+                </span>
 
             </div>
             </form>
@@ -96,11 +96,11 @@
     var flag = true;
     var oInputVC = document.getElementsByName('vericode')[0];
     var oImgVC = document.getElementById('vc-img');
-    var oA = document.getElementById('getvc');
+    {#var oA = document.getElementById('getvc');#}
     oInputVC.onclick = function(){
         if(flag == true){
             oImgVC.src = {% url 'pc:getvericode' %}
-                oA.innerText=' 换一张';
+                {#oA.innerText=' 换一张';#}
             flag = false
         }
     }

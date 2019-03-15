@@ -7,7 +7,7 @@ from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
 
 # Create your views here.
-from pc.models import Carousel, User
+from pc.models import Carousel, User, Type, Goods, GoodsImg
 from pc.vericode import Vericode
 
 
@@ -60,7 +60,7 @@ def register(request):
             token = generate_token()
             cache.set(token,user.id,60*60*24*3)
             request.session['token'] = token
-            return render(request,'mainWeb.html')
+            return redirect('pc:index')
         except Exception as e:
             print(e)
             return render(request,'register.html',context={'error':'注册失败，请重新注册'})
@@ -93,7 +93,10 @@ def login(request):
         user = User.objects.filter(name=name).filter(password=password)
         if user.exists():
             user = user.first()
-            return render(request,'mainWeb.html',context={'user':user})
+            token = generate_token()
+            cache.set(token,user.id,60*60*24*3)
+            request.session['token'] = token
+            return redirect('pc:index')
         else:
             return render(request,'login.html',context={'error':'用户名或密码错误'})
 
@@ -102,5 +105,69 @@ def getvericode(request):
     vc = Vericode()
     img,code = vc.create_img()
     response = HttpResponse(img,'image/png')
-    response.set_cookie('vericode',code)
+    response.set_cookie('revericode',code,path='/register/')
     return response
+
+
+def cart(request):
+    return render(request,'cart.html')
+
+
+def goodsinfo(request,goodsid):
+    token = request.session.get('token')
+    response_data = {}
+    if token:
+        userid = cache.get(token)
+        user = User.objects.filter(pk=userid)
+        if user.exists():
+            user = user.first()
+            response_data['user'] = user
+
+    goods = Goods.objects.get(pk=goodsid)
+
+    goodsimg = goods.goodsimg_set.all()
+
+    response_data['goods'] = goods
+    response_data['goodsimg'] = goodsimg
+
+
+    if goods.productdesc:
+        desc_list =goods.productdesc.split('#')
+        color_list = {}
+        for item in range(len(desc_list)):
+            color_list[desc_list[item]] = item
+        response_data['color_list'] = color_list
+
+    if goods.productsize:
+        desc_list = goods.productsize.split('#')
+        size_list = {}
+        for item in range(len(desc_list)):
+            size_list[desc_list[item]] = item
+        response_data['size_list'] = size_list
+
+    return render(request,'goodsinfo.html',context=response_data)
+
+
+def makegoods(request):
+    typeid = 3
+    type = Type.objects.filter(typeid=typeid).first()
+    goods = Goods()
+    goods.productlongname = "斯鑫明 2016秋冬新款男士纯棉夹克男时尚印花修身拼接夹克外套"
+    goods.price = float(str(random.randrange(199,399))+'.00')
+    goods.ftypeid = type
+    goods.ctypeid = int(str(typeid)+str(random.randrange(1000,1003)))
+    goods.productdesc = "#白色#黑色#灰色#深蓝"
+    goods.productsize = "S#M#L#XL"
+    goods.issale = 0
+    goods.storenums = 194
+    goods.review = 0
+    goods.coin = 2
+
+    goods.save()
+
+    goodsimg = GoodsImg()
+    goodsimg.path = 'img/tshirt_man1/1.jpg'
+    goodsimg.goods = goods
+    goodsimg.save()
+
+    return HttpResponse(goods.productlongname)

@@ -8,7 +8,7 @@ from px.settings import BASE_DIR
 
 class Vericode():
     def __init__(self):
-        self.width = 150
+        self.width = 130
         self.height = 38
         self.size = 4
         self.pen = None

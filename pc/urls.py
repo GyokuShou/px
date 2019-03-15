@@ -9,4 +9,10 @@ urlpatterns = [
    url(r'^logout/$', views.logout, name='logout'),
    url(r'^login/$', views.login, name='login'),
    url(r'^getvericode/$', views.getvericode, name='getvericode'),
+   url(r'^cart/$', views.cart, name='cart'),
+   url(r'^goodsinfo/(?P<goodsid>\d+)/$', views.goodsinfo, name='goodsinfo'),
+
+
+
+   url(r'^makegoods/$', views.makegoods, name='makegoods'),
 ]

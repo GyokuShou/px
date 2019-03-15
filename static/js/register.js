@@ -1,6 +1,7 @@
 $(function(){
     $('#name').click(function(){
        $('#sp-name').removeClass().addClass('v-info');
+       $('#sp-name').html('请输入邮箱/手机号');
     });
     $('#name').blur(function(){
         var name = $('#name').val();
@@ -8,6 +9,7 @@ $(function(){
         var reg = /^1[3|4|5|7|8][0-9]{9}$/;
         if(name==''){
             $('#sp-name').removeClass().addClass('v-info');
+            $('#sp-name').html('请输入邮箱/手机号');
             return ;
         }
         if(myreg.test(name) || reg.test(name)){
@@ -69,34 +71,40 @@ $(function(){
 
     $('#vericode').click(function(){
        $('#sp-vericode').removeClass().addClass('v-info');
+       $('#sp-vericode').html('请输入验证码');
     });
-    // $('#vericode').blur(function(){
-    //     var vericode = $(this).val();
-    //     var vc = $.cookie('vc');
-    //     if(vc.lower == vericode.lower){
-    //         $('#sp-vericode').removeClass().addClass('v-ok');
-    //         $('#sp-vericode').html('验证正确');
-    //     }else {
-    //         $('#sp-vericode').removeClass().addClass('v-error');
-    //         $('#sp-vericode').html('验证码错误');
-    //     }
-    // });
-    $('#sp-vericode').removeClass().addClass('v-ok');$('#sp-vericode').html('验证正确');
+    $('#vericode').blur(function(){
+        var vericode = $(this).val();
+        var vc = $.cookie('revericode');
+        if(vc.toLowerCase() == vericode.toLowerCase()){
+            $('#sp-vericode').removeClass().addClass('v-ok');
+            $('#sp-vericode').html('验证正确');
+        }else {
+            $('#sp-vericode').removeClass().addClass('v-error');
+            $('#sp-vericode').html('验证码错误');
+        }
+    });
+    // $('#sp-vericode').removeClass().addClass('v-ok');$('#sp-vericode').html('验证正确');
 
 
     $('.blue-button').click(function(){
         var flag = true;
+
+        $('.form input').each(function(){
+           if($(this).val()=='') flag=false;
+        });
+
         $('.form span').each(function(){
-            if($(this).is('v-error') || $(this).is('v-info')){
+            if($(this).is('v-error') || $(this).is('v-info') || $(this).is('')){
                 flag = false;
             }
         });
+
+        console.log(flag+'------------------flag'+$('#checkbox').attr('checked'));
         if(flag && $('#checkbox').attr('checked')){
             $('.login-content form').submit();
             console.log('23333');
         }
     });
-
-
 
 });

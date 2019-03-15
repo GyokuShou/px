@@ -26,7 +26,7 @@
 .goodsimg{position: relative; z-index: 30; float: left; width: 420px;}
 .bigimg{position: relative; width: 418px; height: 418px; margin-bottom: 14px; border: 1px solid #f2f2f2;}
 #smallArea{position: absolute;width: 150px;height: 150px;border: 1px solid;}
-.bbigimg{width: 1200px;height: 1200px;background: url() no-repeat;background-size: 1200px 1200px;position: absolute;left: 420px;top: 0;overflow: hidden;}
+.bbigimg{width: 1200px;height: 1200px;background: url("http://") no-repeat;background-size: 1200px 1200px;position: absolute;left: 420px;top: 0;overflow: hidden;}
 #bigArea{width: 600px;height: 600px; overflow: hidden;position: absolute;left: 420px;top: 0;display: none;}
 .bigimg img{max-width: 418px; max-height: 418px;}
 .goodsimg .previmg,
@@ -58,7 +58,7 @@
 .colorbox li{position: relative; float: left; width: 46px; height: 46px;}
 .colorbox li img{max-width: 36px; max-height: 36px;}
 .colorbox li.current i{position: absolute; top: 29px; left: 29px; display: block; width: 11px; height: 11px; background-position: -135px -128px;}
-.colorbox li.current a{padding: 0; border: 2px solid #c00;}
+.colorbox li.current a{padding: 0; border: 1px solid #ff5151;}
 .colorbox a{font-size: 0; display: block; width: 36px; height: 36px; padding: 1px; text-align: center; border: 1px solid #bfbfbf;}
 .sizebox span{line-height: 30px;}
 .sizebox ul{float: left; max-width: 390px;}

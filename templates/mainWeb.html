@@ -82,8 +82,8 @@
                     <span class="head_top_left_s1">您好，欢迎来拍鞋网！</span>
 
                     {% if user %}
-                        <a class="head_top_left_a4">{{ user.name }}</a>
-                        <a class="head_top_left_a4" href="{% url 'pc:logout' %}">注销</a>
+                        <a id="head_top_left_a4">{{ user.name }}</a>
+                        <a id="head_top_left_a4" href="{% url 'pc:logout' %}">注销</a>
                     {% else %}
                         <a href="{% url 'pc:login' %}" class="head_top_left_a2"></a>
                         <a href="{% url 'pc:register' %}" target="_blank" class="head_top_left_a3">免费注册</a>
@@ -93,7 +93,7 @@
                 <!--右-->
                 <span class="head_top_right">
                     <div class="head_top_right_d1">
-                        <a href="cart.html" class="head_top_right_a1">
+                        <a href="{% url 'pc:cart' %}" class="head_top_right_a1">
                             <i class="head_top_right_a1_i"></i>
                             <span class="head_top_right_a1_s1">购物车</span>
                             <b class="head_top_right_a1_s2">0</b>
@@ -1401,3 +1401,4 @@
 <script type="text/javascript" src="{% static 'js/body.js' %}"></script>
 <script src="{%  static 'js/swiper.min.js' %}"></script>
 <script src="{% static 'js/mainWebSwiper.js' %}"></script>
+<script src="{% static 'js/mainWeb.js' %}"></script>

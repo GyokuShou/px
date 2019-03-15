@@ -1,14 +1,14 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>拍鞋网</title>
-    <link rel="stylesheet" type="text/css" href="css/base.css">
-    <link rel="stylesheet" type="text/css" href="css/layout.css">
-    <link rel="stylesheet" type="text/css" href="css/cart.css">
-    <script src="js/jquery-1.12.3.js"></script>
-    <script src="js/jquery.cookie.js"></script>
-    <script src="js/cart.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/layout.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/cart.css' %}">
+
 </head>
 <body>
 <div class="head" id="head">
@@ -807,3 +807,7 @@
 </div>
 </body>
 </html>
+
+<script src="{% static 'js/jquery-1.11.3.min.js' %}"></script>
+<script src="{% static 'js/jquery.cookie.js' %}"></script>
+<script src="{% static 'js/cart.js' %}"></script>
