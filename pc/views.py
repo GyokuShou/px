@@ -7,7 +7,7 @@ from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
 
 # Create your views here.
-from pc.models import Carousel, User, Type, Goods, GoodsImg
+from pc.models import Carousel, User, Type, Goods, GoodsImg, Cart
 from pc.vericode import Vericode
 
 
@@ -23,6 +23,10 @@ def index(request):
             response_data['user'] = user
     carousel = Carousel.objects.all()
     response_data['carousel'] = carousel
+
+    goods = Goods.objects.all()
+    response_data['goods'] = goods
+
     return render(request,'mainWeb.html',context=response_data)
 
 
@@ -96,6 +100,11 @@ def login(request):
             token = generate_token()
             cache.set(token,user.id,60*60*24*3)
             request.session['token'] = token
+
+            page = request.COOKIES.get('page')
+            if page:
+                return redirect('pc:makegoods',page)
+
             return redirect('pc:index')
         else:
             return render(request,'login.html',context={'error':'用户名或密码错误'})
@@ -116,6 +125,7 @@ def cart(request):
 def goodsinfo(request,goodsid):
     token = request.session.get('token')
     response_data = {}
+    response_data['user'] = None
     if token:
         userid = cache.get(token)
         user = User.objects.filter(pk=userid)
@@ -171,3 +181,34 @@ def makegoods(request):
     goodsimg.save()
 
     return HttpResponse(goods.productlongname)
+
+
+def addcart(request):
+    token = request.session.get('token')
+    userid = cache.get(token)
+    user = User.objects.get(pk=userid)
+
+    descs = request.GET.get('descs')
+    sizes = request.GET.get('sizes')
+    num = request.GET.get('num')
+    goodsid = request.GET.get('goodsid')
+    print(descs,sizes,num)
+
+    goods = Goods.objects.get(pk=goodsid)
+
+
+    try:
+        carts = Cart()
+        carts.user = user
+        carts.good = goods
+        carts.desc = descs
+        carts.size = sizes
+        carts.number = num
+        carts.save()
+
+        response_data = {
+            'status': 1,
+        }
+        return JsonResponse(response_data)
+    except Exception as e:
+        return JsonResponse({'status':-1})

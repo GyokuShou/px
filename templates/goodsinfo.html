@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/goodsinfo.css' %}">
 
 </head>
-<body>
+<body data-page="{{ goods.id }}">
 <div class="allrightshow">
     <div class="allright-top">
         <ul>
@@ -115,11 +115,11 @@
 {#                <a href="login.html" class="dologinBtn"></a>#}
 {#                <span><a href="register.html">免费注册</a></span>#}
                 {% if user %}
-                    <a id="">{{ user.name }}</a>
-                    <a id="" href="{% url 'pc:logout' %}">注销</a>
+                    <a id="">{{ user.name }}&nbsp;&nbsp;</a>
+                    <a id="" href="{% url 'pc:logout' %}">&nbsp;注销</a>
                 {% else %}
-                    <a href="{% url 'pc:login' %}" class="head_top_left_a2"></a>
-                    <a href="{% url 'pc:register' %}" target="_blank" class="head_top_left_a3">免费注册</a>
+                    <a href="{% url 'pc:login' %}" class="head_top_left_a2">登录&nbsp;&nbsp;</a>
+                    <a href="{% url 'pc:register' %}" target="_blank" class="head_top_left_a3">&nbsp;免费注册</a>
                 {% endif %}
             </p>
         </div>
@@ -721,7 +721,7 @@
 </div>
 </div>
 </div>
-    <div class="main">
+    <div class="main" data-good="{{ goods.id }}">
         <div class="location">
             <a href="#">拍鞋首页</a>
             >
@@ -802,10 +802,9 @@
                         {% for color in color_list %}
                             <li class="current">
                                 <i class="i-ok" data-color="{{ forloop.counter }}"></i>
-                                <a>{{ color }}</a>
+                                <a data-desc="{{ color }}">{{ color }}</a>
                             </li>
                         {% endfor %}
-
                     </ul>
                 </div>
                 {% endif %}
@@ -815,11 +814,10 @@
                     <ul>
                         {% for size in size_list %}
                             <li>
-                                <i class="icon" data-size="{{ forloop.counter }}"></i>
-                                <a>{{ size }}</a>
+{#                                <i class="icon" data-size="{{ forloop.counter }}"></i>#}
+                                <a data-size="{{ size }}">{{ size }}</a>
                             </li>
                         {% endfor %}
-
                     </ul>
                 </div>
                 {% endif %}
@@ -836,8 +834,8 @@
 
                         </div>
                     </div>
-                    <a href="cart.html"><input class="bred" type="button" value="立即购买"/></a>
-                    <input class="borg" type="button" value="加入购物车"/>
+                    <a href="cart.html"><input class="bred" type="button" value="立即购买" id="buy" /></a>
+                    <input class="borg" type="button" value="加入购物车" id="input-cart" />
                 </div>
             </form>
         </div>

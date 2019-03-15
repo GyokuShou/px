@@ -649,6 +649,20 @@
                     <h5>品牌活动</h5>
 
                     <div id="body_one_mid_3" class="aaa">
+                        <ul class="body_one_mid_3_ul">
+                            {% for good in goods %}
+                                <a href="{% url 'pc:goodsinfo' good.id %}" id="a-in-img">
+                                <li>
+                                    <div class="div-img-div">
+                                        <img src="{% static good.img %}" alt="">
+                                        <p>{{ good.productlongname }}</p>
+                                        <p>￥{{ good.price }}</p>
+                                    </div>
+                                </li>
+                                </a>
+                            {% endfor %}
+
+                        </ul>
                     </div>
 
                     <div id="body_one_mid_4" class="aaa">

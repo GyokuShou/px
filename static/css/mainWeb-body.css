@@ -2519,3 +2519,44 @@ color: white;
 	-webkit-align-items: center;
 	align-items: center;
 }
+
+
+.body_one_mid_3_ul{
+	display: block;
+	zoom: 1;
+	content: '';
+	clear: both;
+	z-index: 100000;
+}
+
+.body_one_mid_3_ul #a-in-img{
+	width: 155px;
+	height: 145px;
+}
+
+
+
+.body_one_mid_3_ul li{
+	float: left;
+	width: 155px;
+	height: 145px;
+	border: 1px solid #000000;
+	margin-right: 2px;
+
+}
+
+.body_one_mid_3_ul #a-in-img li .div-img-div{
+	width: 155px;
+	height: 145px;
+}
+
+.body_one_mid_3_ul li img{
+	width: 100px;
+}
+
+.div-img-div p{
+	height: 20px;
+	line-height: 20px;
+	width: 150px;
+	overflow: hidden;
+}

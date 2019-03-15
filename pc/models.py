@@ -40,6 +40,8 @@ class Goods(models.Model):
     review = models.IntegerField()  # 评论
     coin = models.IntegerField()  # 币
 
+    img = models.CharField(max_length=100,default='')
+
     class Meta:
         db_table = 'px_goods'
 
@@ -48,3 +50,15 @@ class GoodsImg(models.Model):
     goods = models.ForeignKey(Goods)
     class Meta:
         db_table = 'px_goodsimg'
+
+class Cart(models.Model):
+    user = models.ForeignKey(User)
+    good = models.ForeignKey(Goods)
+    desc = models.CharField(max_length=50)
+    size = models.CharField(max_length=50)
+    number = models.IntegerField()
+    isselect = models.BooleanField(default=True)
+    isdelete = models.BooleanField(default=False)
+
+    class Meta:
+        db_table = 'px_cart'

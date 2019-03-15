@@ -1,0 +1,22 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="5;url=hello.html">
+    <title>Title</title>
+</head>
+<body>
+<a></a>
+</body>
+</html>
+<script src="{% static 'js/jquery-1.11.3.min.js' %}"></script>
+<script>
+    $(function(){
+        var page = $.cookie('page');
+        page = '/goodsinfo/' + page;
+        $('a').attr('href',page);
+        $('a')
+    });
+</script>
