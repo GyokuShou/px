@@ -21,6 +21,12 @@ def index(request):
         if userid:
             user = User.objects.get(pk=userid)
             response_data['user'] = user
+
+            carts = Cart.objects.filter(user=user)
+            response_data['carts'] = carts
+            response_data['cartscount'] = carts.count()
+
+
     carousel = Carousel.objects.all()
     response_data['carousel'] = carousel
 
@@ -64,7 +70,9 @@ def register(request):
             token = generate_token()
             cache.set(token,user.id,60*60*24*3)
             request.session['token'] = token
-            return redirect('pc:index')
+            response = redirect('pc:index')
+            response.set_cookie('user',token,max_age=60*60*24*3)
+            return response
         except Exception as e:
             print(e)
             return render(request,'register.html',context={'error':'注册失败，请重新注册'})
@@ -84,7 +92,13 @@ def checkname(request):
 
 def logout(request):
     request.session.flush()
-    return redirect('pc:index')
+    response = redirect('pc:index')
+    response.set_cookie('user','',max_age=0)
+    response.set_cookie('page', '', max_age=0)
+    response.set_cookie('descs', '', max_age=0)
+    response.set_cookie('sizes', '', max_age=0)
+    response.set_cookie('num', '', max_age=0)
+    return response
 
 
 def login(request):
@@ -103,9 +117,13 @@ def login(request):
 
             page = request.COOKIES.get('page')
             if page:
-                return redirect('pc:jump')
+                response = redirect('pc:jump')
+                response.set_cookie('user', token, max_age=60 * 60 * 24 * 3)
+                return response
 
-            return redirect('pc:index')
+            response = redirect('pc:index')
+            response.set_cookie('user',token,max_age=60*60*24*3)
+            return response
         else:
             return render(request,'login.html',context={'error':'用户名或密码错误'})
 

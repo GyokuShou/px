@@ -19,13 +19,25 @@
             <!--1-->
             <span class="allrightshow_top_buycar">
                 <a href="cart.html">
-                    <span class="allrightshow_top_buycar_s1"></span>
+                    <span class="allrightshow_top_buycar_s1">
+
+                    </span>
                     <span class="allrightshow_top_buycar_s2">购物车</span>
-                    <i>0</i>
+                    <i>{{ cartscount }}</i>
                 </a>
                 <div class="allrightshow_top_buycar_thing">
                     <span></span>
-                    <p>主人主人，不要太小气嘛，多放点商品来陪伴我吧 <a href="cart.html">去挑选</a></p>
+                    {% if cartscount %}
+                        {% if cartscount %}
+                            <a href="{% url 'pc:cart' %}">
+                        {% for cart in carts %}
+                            <p>{{ cart.good.productlongname }}</p>
+                        {% endfor %}
+                        </a>
+                        {% endif %}
+                    {% else %}
+                        <p>主人主人，不要太小气嘛，多放点商品来陪伴我吧 <a href="{% url 'pc:index' %}">去挑选</a></p>
+                    {% endif %}
                 </div>
             </span>
 
@@ -1409,6 +1421,7 @@
 </html>
 
 <script src="{% static 'js/jquery-1.11.3.min.js' %}"></script>
+<script src="{% static 'js/jquery.cookie.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/mainWeb-head-right.js' %}" ></script>
 <script type="text/javascript" src="{% static 'js/mainWeb-body-one-lunbo.js' %}" ></script>
 <script type="text/javascript" src="{% static 'js/mainWeb_JSONhuoqu.js' %}" ></script>
