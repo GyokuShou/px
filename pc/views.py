@@ -150,9 +150,15 @@ def cart(request):
         if userid:
             user = User.objects.get(pk=userid)
             carts = Cart.objects.filter(user=user)
+            isall = 1
+            for cart in carts:
+                if cart.isselect == 0:
+                    isall = 0
             response_data = {
                 'user': user,
                 'carts': carts,
+                'isall': isall,
+
             }
             return render(request,'cart.html',context=response_data)
 
@@ -228,7 +234,7 @@ def addcart(request):
     user = User.objects.get(pk=userid)
 
     descs = request.GET.get('descs')
-    sizes = request.GET.get('sizes')
+    sizes = request.GET.get('sizess')
     num = int(request.GET.get('num'))
     goodsid = request.GET.get('goodsid')
     print(descs,sizes,num)
@@ -314,3 +320,62 @@ def addcart(request):
         return JsonResponse({'status':-1})
 
 
+def modicartselect(request):
+    token = request.session.get('token')
+    userid = cache.get(token)
+    user = User.objects.get(pk=userid)
+    flag = request.GET.get('flag')
+    desc = request.GET.get('desc')
+    size = request.GET.get('size')
+    goodsid = request.GET.get('goodsid')
+
+    goods = Goods.objects.get(pk=goodsid)
+    carts = Cart.objects.filter(user=user).filter(good=goods)
+
+    if desc:
+        carts = carts.filter(desc=desc)
+    if size:
+        carts = carts.filter(size=size)
+
+    carts = carts.first()
+    if flag == 'true':
+        carts.isselect = 1
+    else:
+        carts.isselect = 0
+
+    carts.save()
+
+    response_data = {
+        'status': 1,
+    }
+    return JsonResponse(response_data)
+
+
+def modicartnum(request):
+    token = request.session.get('token')
+    userid = cache.get(token)
+    user = User.objects.get(pk=userid)
+    desc = request.GET.get('desc')
+    size = request.GET.get('size')
+    op = int(request.GET.get('op'))
+    goodsid = request.GET.get('goodsid')
+    print('--------------------------'+str(op))
+
+    goods = Goods.objects.get(pk=goodsid)
+    carts = Cart.objects.filter(user=user).filter(good=goods)
+
+    if desc:
+        carts = carts.filter(desc=desc)
+    if size:
+        carts = carts.filter(size=size)
+    carts = carts.first()
+
+    if op == 1:
+        num = carts.number + 1
+        carts.number = num
+        carts.save()
+    elif op == 0:
+        num = carts.number - 1
+        carts.number = num
+        carts.save()
+    return JsonResponse({'status':1,'num':carts.number})

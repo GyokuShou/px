@@ -14,13 +14,16 @@
 .cart-box-current tr:first-child,
 .cart-box-current tr:last-child{border-bottom: none;}
 .cart-box-current td{padding: 10px 0;}
-.cart-box-current .box-chk{width: 19%;padding-left: 1%;}
+.cart-box-current .box-chk{width: 5%;padding-left: 1%;}
 .cart-box-current .box-chk input{margin: 0;}
 .cart-box-current .box-name{width: 25%;}
+.cart-box-current .box-desc{width: 6%;}
+.cart-box-current .box-size{width: 6%;}
 .cart-box-current .box-price{width: 15%;}
 .cart-box-current .box-num{width: 15%;}
-.cart-box-current .box-allprice{width: 15%;}
+.cart-box-current .box-allprice{width: 10%;}
 .cart-box-current .box-operate{width: 5%;}
+.cart-box-current .box-operate span{font-size: 26px;background: #233;margin-right: 5px;color: #ffffff;width: 30px;height: 30px;line-height: 30px;display: inline-block;text-align: center;}
 .cart-box-current .tr2-input{float: left;margin: 30px 10px 0 13px;}
 .cart-box-current img{float: left; width: 80px; max-width: 80px;height: 80px; max-height: 80px;}
 .cart-box-current ul{float: left; margin: 5px 0 0 5px;}

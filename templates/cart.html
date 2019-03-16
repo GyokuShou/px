@@ -673,37 +673,41 @@
         <span><i></i>商品价格请以订单提交时为准</span>
     </div>
     <table class="cart-box-current">
-        <tr>
-            <th class="box-chk"><input type="checkbox" class="js-select-all" />全选</th>
+        <tr data-isall="{{ isall }}">
+            <th class="box-chk"><input type="checkbox" class="js-select-all" id="selectall" />全选</th>
             <th class="box-name">商品名称</th>
+            <th class="box-desc">规格</th>
+            <th class="box-size">尺码</th>
             <th class="box-price">拍鞋价(元)</th>
             <th class="box-num">数量</th>
             <th class="box-allprice">小计(元)</th>
             <th class="box-operate">操作</th>
         </tr>
         {% for cart in carts %}
-            <tr>
-                <th class="box-chk"><input type="checkbox" class="js-select-all" /></th>
-                <th class="box-name">{{ cart.good.productlongname }}</th>
-                <th class="box-price">{{ cart.good.price }}元</th>
-                <th class="box-num">{{ cart.number }}</th>
-                <th class="box-allprice"></th>
-                <th class="box-operate">操作</th>
+            <tr class="th-cart" data-isall="{{ isall }}">
+                <td class="box-chk" data-checked="{{ cart.isselect }}"><input type="checkbox" class="js-select-all" data-goodsid="{{ cart.good.id }}" /></td>
+                <td class="box-name">{{ cart.good.productlongname }}</td>
+                <td class="box-desc">{{ cart.desc }}</td>
+                <td class="box-size">{{ cart.size }}</td>
+                <td class="box-price" data-price="{{ cart.good.price }}">{{ cart.good.price }}元</td>
+                <td class="box-num" data-num="{{ cart.number }}">{{ cart.number }}</td>
+                <td class="box-allprice"></td>
+                <td class="box-operate" data-goodsid="{{ cart.good.id }}"><span class="sp-cut">-</span><span class="sp-add">+</span></td>
             </tr>
         {% endfor %}
 
         
     </table>
     <div class="area-go-pay">
-        <label class="xcartall">
-            <input name="" value="" type="checkbox" class="js-select-all" >
-            <a class="js-select-all  all">全选</a>
-        </label>
-        <a id="del-chk" href="javascript:;">删除选中商品</a>
+{#        <label class="xcartall">#}
+{#            <input name="" value="" type="checkbox" class="js-select-all" >#}
+{#            <a class="js-select-all  all">全选</a>#}
+{#        </label>#}
+        <a id="del-chk" href="javascript:;">&nbsp;&nbsp;&nbsp;&nbsp;删除选中商品</a>
         <a href="mainWeb.html">继续购物</a>
         <a id="clear-cart" href="javascript:;">清空购物车</a>
       合计（不含运费）：
-            <strong class="orange yh money">0.00</strong>
+            <strong class="orange yh money" id="allprice"></strong>
         <a class="go-pay" id="js-go-pay" >去结算></a>
     </div>
     </div>
