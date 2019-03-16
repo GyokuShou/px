@@ -116,10 +116,13 @@ def login(request):
             request.session['token'] = token
 
             page = request.COOKIES.get('page')
+            cartpage= request.COOKIES.get('cartpage')
             if page:
                 response = redirect('pc:jump')
                 response.set_cookie('user', token, max_age=60 * 60 * 24 * 3)
                 return response
+            if cartpage:
+                return render(request,'cart.html')
 
             response = redirect('pc:index')
             response.set_cookie('user',token,max_age=60*60*24*3)
@@ -141,7 +144,21 @@ def getvericode(request):
 
 
 def cart(request):
-    return render(request,'cart.html')
+    token = request.session.get('token')
+    if token:
+        userid = cache.get(token)
+        if userid:
+            user = User.objects.get(pk=userid)
+            carts = Cart.objects.filter(user=user)
+            response_data = {
+                'user': user,
+                'carts': carts,
+            }
+            return render(request,'cart.html',context=response_data)
+
+    response = render(request,'login.html')
+    response.set_cookie('cartpage','cart',max_age=60*60)
+    return response
 
 
 def goodsinfo(request,goodsid):
@@ -223,6 +240,7 @@ def addcart(request):
         if carts.filter(good=goods):
             carts = carts.filter(good=goods)
             if descs and sizes:
+                print('----------------desc sizes-----------------')
                 carts = carts.filter(desc=descs).filter(size=sizes)
                 if carts.exists():
                     carts = carts.first()
@@ -238,6 +256,7 @@ def addcart(request):
                     carts.number = num
                     carts.save()
             elif descs:
+                print('------------only descs----------------')
                 carts = carts.filter(desc=descs)
                 if carts.exists():
                     carts = carts.first()
@@ -252,6 +271,7 @@ def addcart(request):
                     carts.number = num
                     carts.save()
             elif sizes:
+                print('---------sizes-------------')
                 carts = carts.filter(size=sizes)
                 if carts.exists():
                     carts = carts.first()
@@ -271,6 +291,7 @@ def addcart(request):
                 carts.number = num
                 carts.save()
         else:
+            print('-----------------------')
             carts = Cart()
             carts.user = user
             carts.good = goods

@@ -60,8 +60,13 @@
             <a href="#" class="mbicon"></a>
             <p class="loginOut">
                 <span>您好，欢迎来拍鞋网！</span>
-                <a href="login.html" class="dologinBtn"></a>
-                <span><a href="register.html">免费注册</a></span>
+                {% if user %}
+                    <a>{{ user.name }}</a>
+                    <a href="{% url 'pc:logout' %}">注销</a>
+                {% else %}
+                    <a href="login.html" class="dologinBtn"></a>
+                    <span><a href="{% url 'pc:register' %}">免费注册</a></span>
+                {% endif %}
             </p>
         </div>
     </div>
@@ -676,6 +681,17 @@
             <th class="box-allprice">小计(元)</th>
             <th class="box-operate">操作</th>
         </tr>
+        {% for cart in carts %}
+            <tr>
+                <th class="box-chk"><input type="checkbox" class="js-select-all" /></th>
+                <th class="box-name">{{ cart.good.productlongname }}</th>
+                <th class="box-price">{{ cart.good.price }}元</th>
+                <th class="box-num">{{ cart.number }}</th>
+                <th class="box-allprice"></th>
+                <th class="box-operate">操作</th>
+            </tr>
+        {% endfor %}
+
         
     </table>
     <div class="area-go-pay">
