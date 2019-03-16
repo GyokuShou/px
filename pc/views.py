@@ -149,7 +149,7 @@ def cart(request):
         userid = cache.get(token)
         if userid:
             user = User.objects.get(pk=userid)
-            carts = Cart.objects.filter(user=user)
+            carts = Cart.objects.filter(isdelete=False).filter(user=user)
             isall = 1
             for cart in carts:
                 if cart.isselect == 0:
@@ -330,7 +330,7 @@ def modicartselect(request):
     goodsid = request.GET.get('goodsid')
 
     goods = Goods.objects.get(pk=goodsid)
-    carts = Cart.objects.filter(user=user).filter(good=goods)
+    carts = Cart.objects.filter(isdelete=False).filter(user=user).filter(good=goods)
 
     if desc:
         carts = carts.filter(desc=desc)
@@ -355,14 +355,14 @@ def modicartnum(request):
     token = request.session.get('token')
     userid = cache.get(token)
     user = User.objects.get(pk=userid)
-    desc = request.GET.get('desc')
-    size = request.GET.get('size')
+    desc = request.GET.get('descs')
+    size = request.GET.get('sizess')
     op = int(request.GET.get('op'))
     goodsid = request.GET.get('goodsid')
     print('--------------------------'+str(op))
 
     goods = Goods.objects.get(pk=goodsid)
-    carts = Cart.objects.filter(user=user).filter(good=goods)
+    carts = Cart.objects.filter(isdelete=False).filter(user=user).filter(good=goods)
 
     if desc:
         carts = carts.filter(desc=desc)
@@ -375,7 +375,11 @@ def modicartnum(request):
         carts.number = num
         carts.save()
     elif op == 0:
-        num = carts.number - 1
-        carts.number = num
-        carts.save()
+        if carts.number <= 1:
+            carts.number = 1
+            carts.save()
+        else:
+            num = carts.number - 1
+            carts.number = num
+            carts.save()
     return JsonResponse({'status':1,'num':carts.number})

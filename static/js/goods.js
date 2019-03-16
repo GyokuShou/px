@@ -351,15 +351,16 @@ $(function(){
 $(function(){
     var descs = $('#goods-color-list li:first a').attr('data-desc');
     var sizess = $('.sizebox li:first a').attr('data-size');
+
+    if ($.cookie('descs')) descs = $.cookie('descs');
+    if ($.cookie('sizess')) sizess = $.cookie('sizess');
+
     $('#goods-color-list li a').click(function(){
         descs = $(this).html();
-        console.log(descs)
     });
     $('.sizebox li a').click(function(){
         sizess = $(this).attr('data-size');
-        console.log(sizess)
     });
-
     $('#input-cart').click(function(){
         if($.cookie('user')){
             // $('#goods-color-list li').each(function(){  //  获取样式

@@ -98,7 +98,7 @@ $(function(){
             }
         });
     });
-    getsum();
+
 
     $('.sp-add').click(function(){
         console.log('233')
@@ -119,7 +119,7 @@ $(function(){
         });
     });
     $('.sp-cut').click(function(){
-        if($(this).parent().prev().prev().html()==1) return;
+        if($(this).parent().prev().prev().html()<=1) return;
         var descs = $(this).parent().prev().prev().prev().prev().prev().html();
         var sizess = $(this).parent().prev().prev().prev().prev().html();
         var goodsid = $(this).parent().attr('data-goodsid');
@@ -138,8 +138,38 @@ $(function(){
 
     });
 
+    $('#del-chk').click(function(){
 
 
+
+        var flag = $(this).prop('checked');
+        var fx = true;
+        $('.th-cart').each(function () {
+            var goodsid = $(this).children('.box-chk').children('input').attr('data-goodsid');
+            var descs = $(this).children('.box-desc').html();
+            var sizess = $(this).children('.box-size').html();
+            requset_data = {'flag': flag, 'goodsid': goodsid,};
+            if (descs) requset_data['descs'] = descs;
+            if (sizess) requset_data['sizess'] = sizess;
+            $.get('/modicartselect/', requset_data, function (response) {
+                if (response.status == -1) {
+                    fx = false;
+                }
+            });
+        });
+        console.log(fx)
+        if (fx) {
+            flag ? flag : !flag;
+            $('#selectall').prop("checked", flag);
+            $('.cart-box-current input[type=checkbox]').each(function () {
+                $(this).prop("checked", flag);
+            });
+            setcheck();
+            getsum();
+        }
+    });
+
+    getsum();
 });
 
 $(function(){

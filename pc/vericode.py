@@ -7,10 +7,18 @@ from px.settings import BASE_DIR
 
 
 class Vericode():
-    def __init__(self):
-        self.width = 130
-        self.height = 38
-        self.size = 4
+    def __init__(self,width=130,height=38,size=4):
+        """
+        def getvericode(request):
+            vc = Vericode([width],[height],[size])
+            img,code = vc.create_img()
+            response = HttpResponse(img,'image/png')
+            response.set_cookie('vericode',code,path='/')
+            return response
+        """
+        self.width = width
+        self.height = height
+        self.size = size
         self.pen = None
         self.__code = ""
 
