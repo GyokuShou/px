@@ -4,19 +4,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="5;url=hello.html">
+{#    <meta http-equiv="refresh" content="5;url=hello.html">#}
     <title>Title</title>
 </head>
 <body>
-<a></a>
+<h1>登录成功，3秒后自动跳转</h1>
+<a>点击跳转</a>
 </body>
 </html>
 <script src="{% static 'js/jquery-1.11.3.min.js' %}"></script>
+<script src="{% static 'js/jquery.cookie.js' %}"></script>
 <script>
-    $(function(){
-        var page = $.cookie('page');
-        page = '/goodsinfo/' + page;
-        $('a').attr('href',page);
-        $('a')
-    });
+$(function(){
+    var page = $.cookie('page');
+    {#var uuu = "{" + "% url " + "'pc:goodsinfo'" +' '+ page + " %" + "}";#}
+    var uuu = "/goodsinfo/"+ page + '/';
+    console.log(uuu);
+    $('a').attr("href",uuu);
+
+    setTimeout(function () {
+        $('a')[0].click();
+    }, 3000);
+});
 </script>

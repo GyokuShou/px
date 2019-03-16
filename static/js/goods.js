@@ -300,6 +300,30 @@ $(function(){
     $('#goods-color-list li:first a').before('<i class="i-ok"></i>');
     $('.sizebox ul li:first a').css('border', '1px solid #c00');
     $('.sizebox ul li:first a').before('<i class="i-ok"></i>');
+
+    if($.cookie('descs')){
+        $('#goods-color-list li').each(function(){
+            if($(this).children('a').html()==$.cookie('descs')){
+                $('.current a').css('border', '1px solid #ff5151');
+                $('.current .i-ok').remove();
+                $(this).children('a').css('border', '2px solid #c00');
+                $(this).children('a').before('<i class="i-ok"></i>');
+            }
+        });
+    }
+    if($.cookie('sizes')){
+        $('.sizebox ul li').each(function(){
+            if($(this).children('a').html()==$.cookie('sizes')){
+                $('.sizebox a').css('border', '1px solid #bfbfbf');
+                $('.sizebox li .i-ok').remove();
+                $(this).children('a').css('border', '1px solid #c00');
+                $(this).children('a').before('<i class="i-ok"></i>');
+            }
+        });
+    }
+    if($.cookie('num')){
+        $('.num-text').val($.cookie('num'));
+    }
 });
 
 // 加减处理
@@ -318,44 +342,66 @@ $(function(){
     });
 });
 
-// 跳转cookie
-$(function(){
-    $('.head_top_left_a2').click(function(){
-        $.cookie('page',$('body').attr('data-page'),{expires:3,path:'/'});
-    });
-});
 
 $(function(){
     $('#input-cart').click(function(){
-        $('#goods-color-list li').each(function(){  //  获取样式
-            if($(this).children('i').length==1){
-                descs =  $(this).children('a').attr('data-desc');
-            }
-        });
-        $('.sizebox li').each(function(){   //  获取尺码
-            if($(this).children('i').length==1){
-                sizes =  $(this).children('a').attr('data-size');
-            }
-        });
+        if($.cookie('sessionid')){
+            $('#goods-color-list li').each(function(){  //  获取样式
+                if($(this).children('i').length==1){
+                    descs =  $(this).children('a').attr('data-desc');
+                    $.cookie('descs',descs,{expires: 1,path: '/'});
+                }
+            });
+            $('.sizebox li').each(function(){   //  获取尺码
+                if($(this).children('i').length==1){
+                    sizes =  $(this).children('a').attr('data-size');
+                    $.cookie('sizes',sizes,{expires: 1,path: '/'});
+                }
+            });
 
-        requset_data = {};
-        if(descs) requset_data['descs']=descs;
-        if(sizes) requset_data['sizes']=sizes;
+            requset_data = {};
+            if(descs) requset_data['descs']=descs;
+            if(sizes) requset_data['sizes']=sizes;
+            $.cookie('num',$('.num-text').val(),{expires:1});
 
-        requset_data['num'] = $('.num-text').val();
-        requset_data['goodsid'] = $('.main').attr('data-good');
+            requset_data['num'] = $('.num-text').val();
+            requset_data['goodsid'] = $('.main').attr('data-good');
 
-        $.get('/addcart/',requset_data,function(response){
-            if(response.status==1){
-                console.log('233')
-            }else if(response.status==-1){
-                console.log('---------')
-            }
-        });
-
-
+            $.get('/addcart/',requset_data,function(response){
+                if(response.status==1){
+                    console.log('233')
+                }else if(response.status==-1){
+                    console.log('---------')
+                }
+            });
+        }else {
+            $.cookie('page',$('.main').attr('data-good'),{expires:3,path:'/'});
+            console.log($.cookie('page'));
+            window.open('/login/','_self');
+        }
     });
+
+    // 跳转cookie
+    $('.head_top_left_a2').click(function(){
+        $.cookie('page',$('.main').attr('data-good'),{expires:3,path:'/'});
+    });
+
 });
+
+
+
+$(function(){
+
+});
+
+
+
+
+
+
+
+
+
 
 // $(function(){
 //     $('.colorbox li a').click(function(){

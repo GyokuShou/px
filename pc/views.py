@@ -103,11 +103,15 @@ def login(request):
 
             page = request.COOKIES.get('page')
             if page:
-                return redirect('pc:makegoods',page)
+                return redirect('pc:jump')
 
             return redirect('pc:index')
         else:
             return render(request,'login.html',context={'error':'用户名或密码错误'})
+
+
+def jump(request):
+    return render(request,'jump.html')
 
 
 def getvericode(request):
@@ -269,3 +273,5 @@ def addcart(request):
     except Exception as e:
         print(e)
         return JsonResponse({'status':-1})
+
+

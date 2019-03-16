@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/goodsinfo.css' %}">
 
 </head>
-<body data-page="{{ goods.id }}">
+<body>
 <div class="allrightshow">
     <div class="allright-top">
         <ul>
@@ -119,6 +119,7 @@
                     <a id="" href="{% url 'pc:logout' %}">&nbsp;注销</a>
                 {% else %}
                     <a href="{% url 'pc:login' %}" class="head_top_left_a2">登录&nbsp;&nbsp;</a>
+{#                    <a class="head_top_left_a2">登录&nbsp;&nbsp;</a>#}
                     <a href="{% url 'pc:register' %}" target="_blank" class="head_top_left_a3">&nbsp;免费注册</a>
                 {% endif %}
             </p>
