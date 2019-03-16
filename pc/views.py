@@ -190,19 +190,75 @@ def addcart(request):
 
     descs = request.GET.get('descs')
     sizes = request.GET.get('sizes')
-    num = request.GET.get('num')
+    num = int(request.GET.get('num'))
     goodsid = request.GET.get('goodsid')
     print(descs,sizes,num)
 
     goods = Goods.objects.get(pk=goodsid)
 
-
     try:
-        carts = Cart()
-        carts.user = user
-        carts.good = goods
-        carts.desc = descs
-        carts.size = sizes
+        carts = Cart.objects.filter(user=user)
+        if carts.filter(good=goods):
+            carts = carts.filter(good=goods)
+            if descs and sizes:
+                carts = carts.filter(desc=descs).filter(size=sizes)
+                if carts.exists():
+                    carts = carts.first()
+                    num = num + carts.number
+                    carts.number = num
+                    carts.save()
+                else:
+                    carts = Cart()
+                    carts.user = user
+                    carts.good = goods
+                    carts.desc = descs
+                    carts.size = sizes
+                    carts.number = num
+                    carts.save()
+            elif descs:
+                carts = carts.filter(desc=descs)
+                if carts.exists():
+                    carts = carts.first()
+                    num = num + carts.number
+                    carts.number = num
+                    carts.save()
+                else:
+                    carts = Cart()
+                    carts.user = user
+                    carts.good = goods
+                    carts.desc = descs
+                    carts.number = num
+                    carts.save()
+            elif sizes:
+                carts = carts.filter(size=sizes)
+                if carts.exists():
+                    carts = carts.first()
+                    num = num + carts.number
+                    carts.number = num
+                    carts.save()
+                else:
+                    carts = Cart()
+                    carts.user = user
+                    carts.good = goods
+                    carts.size = sizes
+                    carts.number = num
+                    carts.save()
+            else:
+                carts = carts.first()
+                num = num + carts.number
+                carts.number = num
+                carts.save()
+        else:
+            carts = Cart()
+            carts.user = user
+            carts.good = goods
+            if descs:
+                carts.desc = descs
+            if sizes:
+                carts.size = sizes
+            carts.number = num
+            carts.save()
+
         carts.number = num
         carts.save()
 
@@ -211,4 +267,5 @@ def addcart(request):
         }
         return JsonResponse(response_data)
     except Exception as e:
+        print(e)
         return JsonResponse({'status':-1})
