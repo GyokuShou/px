@@ -481,3 +481,15 @@ def generateorder(request):
         carts.delete()
 
     return JsonResponse({'status': 1,'identified':identified })
+
+
+def orderlist(request):
+    token = request.session.get('token')
+    if token:
+        userid = cache.get(token)
+        if userid:
+            user = User.objects.get(pk=userid)
+            order = Order.objects.filter(user=user)
+            response_data = {'order':order}
+            return render(request,'orderlist.html',context=response_data)
+    return render(request,'login.html')

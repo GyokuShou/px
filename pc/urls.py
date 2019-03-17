@@ -17,7 +17,8 @@ urlpatterns = [
     url(r'^modicartnum/$', views.modicartnum, name='modicartnum'),
     url(r'^delselectcart/$', views.delselectcart, name='delselectcart'),
     url(r'^generateorder/$', views.generateorder, name='generateorder'),
-    url(r'^orderdetail/(?P<identified>\d+)/$', views.orderdetail, name='orderdetail.css'),
+    url(r'^orderdetail/(?P<identified>\d+)/$', views.orderdetail, name='orderdetail'),
+    url(r'^orderlist/$', views.orderlist, name='orderlist'),
 
     url(r'^makegoods/$', views.makegoods, name='makegoods'),
 ]
