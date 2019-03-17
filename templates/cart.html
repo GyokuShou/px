@@ -15,12 +15,12 @@
 <div class="head-topline">
     <div class="head-topLogin">
         <div class="head_topLoginright">
-                    <span class="login-cart">
-                        <a href="#"><i></i>购物车<b>0</b></a>
-                        <div class="cartshow">
-                            <b class="cartboth">您还没有购买任何商品，快去挑选把！</b>
-                        </div>
-                    </span>
+            <span class="login-cart">
+                <a href="{% url 'pc:cart' %}"><i></i>购物车<b>{{ cartcount|default:0 }}</b></a>
+                <div class="cartshow">
+                    <b class="cartboth">您还没有购买任何商品，快去挑选把！</b>
+                </div>
+            </span>
             <span class="login-icon">|</span>
                     <span class="login-paixie">
                         <a href="#">我的拍鞋<i></i></a>
@@ -705,7 +705,7 @@
 {#        </label>#}
         <a id="del-chk">&nbsp;&nbsp;&nbsp;&nbsp;删除选中商品</a>
         <a href="{% url 'pc:index' %}">继续购物</a>
-        <a id="clear-cart" href="javascript:;">清空购物车</a>
+        <a id="clear-cart">清空购物车</a>
         合计（不含运费）：
         <strong class="orange yh money" id="allprice"></strong>
         <a class="go-pay" id="js-go-pay">去结算></a>

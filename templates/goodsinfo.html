@@ -15,9 +15,9 @@
     <div class="allright-top">
         <ul>
             <li>
-                <a href="javascript:;" class="right-cart">
+                <a href="{% url 'pc:cart' %}" class="right-cart">
                     <span>购物车</span>
-                    <i>0</i>
+                    <i>{{ cartcount|default:0 }}</i>
                 </a>
                 <div class="allright_libox cart-box">
                     <div class="loginnocart">
@@ -68,9 +68,16 @@
     <div class="head-topLogin">
         <div class="head_topLoginright">
                     <span class="login-cart">
-                        <a href="cart.html"><i></i>购物车<b>0</b></a>
+                        <a href="{% url 'pc:cart' %}"><i></i>购物车<b>{{ cartcount|default:0 }}</b></a>
                         <div class="cartshow">
-                            <b class="cartboth">您还没有购买任何商品，快去挑选把！</b>
+                            {% if cartcount == 0 %}
+                                <b class="cartboth">您还没有购买任何商品，快去挑选把！</b>
+                            {% else %}
+                                {% for cart in carts %}
+                                    <b class="cartboth">{{ cart.good.productlongname }}</b>
+                                {% endfor %}
+
+                            {% endif %}
                         </div>
                     </span>
             <span class="login-icon">|</span>
@@ -795,7 +802,7 @@
             </p>
         </div>
         <div class="selectbox">
-            <form action="#">
+            <form>
                 {% if color_list %}
                     <div class="colorbox">
                     <span>颜色：</span>
@@ -812,7 +819,7 @@
                 {% if size_list %}
                     <div class="sizebox">
                     <span>尺码：</span>
-                    <ul>
+                    <ul class="goods-size-list">
                         {% for size in size_list %}
                             <li>
 {#                                <i class="icon" data-size="{{ forloop.counter }}"></i>#}
@@ -835,7 +842,7 @@
 
                         </div>
                     </div>
-                    <a href="cart.html"><input class="bred" type="button" value="立即购买" id="buy" /></a>
+                    <a id="a-buy" data-goodsid="{{ goods.id }}"><input class="bred" type="button" value="立即购买" id="buy" /></a>
                     <input class="borg" type="button" value="加入购物车" id="input-cart" />
                 </div>
             </form>

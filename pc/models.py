@@ -62,3 +62,23 @@ class Cart(models.Model):
 
     class Meta:
         db_table = 'px_cart'
+
+class Order(models.Model):
+    user = models.ForeignKey(User)
+    createtime = models.DateTimeField(auto_now_add=True)
+    updatetime = models.DateTimeField(auto_now=True)
+    status = models.IntegerField(default=0)
+    identifier = models.CharField(max_length=256)
+
+    class Meta:
+        db_table = 'px_order'
+
+class OrderGoods(models.Model):
+    order = models.ForeignKey(Order)
+    goods = models.ForeignKey(Goods)
+    desc = models.CharField(max_length=100,default='')
+    size = models.CharField(max_length=100,default='')
+    number = models.IntegerField()
+
+    class Meta:
+        db_table = 'px_ordergoods'

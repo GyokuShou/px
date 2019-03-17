@@ -7,7 +7,7 @@ from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
 
 # Create your views here.
-from pc.models import Carousel, User, Type, Goods, GoodsImg, Cart
+from pc.models import Carousel, User, Type, Goods, GoodsImg, Cart, Order, OrderGoods
 from pc.vericode import Vericode
 
 
@@ -22,7 +22,7 @@ def index(request):
             user = User.objects.get(pk=userid)
             response_data['user'] = user
 
-            carts = Cart.objects.filter(user=user)
+            carts = Cart.objects.filter(isdelete=False).filter(user=user)
             response_data['carts'] = carts
             response_data['cartscount'] = carts.count()
 
@@ -150,6 +150,7 @@ def cart(request):
         if userid:
             user = User.objects.get(pk=userid)
             carts = Cart.objects.filter(isdelete=False).filter(user=user)
+            cartcount = carts.count()
             isall = 1
             for cart in carts:
                 if cart.isselect == 0:
@@ -158,7 +159,7 @@ def cart(request):
                 'user': user,
                 'carts': carts,
                 'isall': isall,
-
+                'cartcount': cartcount,
             }
             return render(request,'cart.html',context=response_data)
 
@@ -177,6 +178,10 @@ def goodsinfo(request,goodsid):
         if user.exists():
             user = user.first()
             response_data['user'] = user
+            carts = Cart.objects.filter(isdelete=False).filter(user=user)
+            cartcount = carts.count()
+            response_data['carts'] = carts
+            response_data['cartcount'] = cartcount
 
     goods = Goods.objects.get(pk=goodsid)
 
@@ -242,16 +247,16 @@ def addcart(request):
     goods = Goods.objects.get(pk=goodsid)
 
     try:
-        carts = Cart.objects.filter(user=user)
+        carts = Cart.objects.filter(isdelete=False).filter(user=user)
         if carts.filter(good=goods):
             carts = carts.filter(good=goods)
             if descs and sizes:
-                print('----------------desc sizes-----------------')
                 carts = carts.filter(desc=descs).filter(size=sizes)
                 if carts.exists():
                     carts = carts.first()
                     num = num + carts.number
                     carts.number = num
+                    carts.isselect = True
                     carts.save()
                 else:
                     carts = Cart()
@@ -260,14 +265,15 @@ def addcart(request):
                     carts.desc = descs
                     carts.size = sizes
                     carts.number = num
+                    carts.isselect = True
                     carts.save()
             elif descs:
-                print('------------only descs----------------')
                 carts = carts.filter(desc=descs)
                 if carts.exists():
                     carts = carts.first()
                     num = num + carts.number
                     carts.number = num
+                    carts.isselect = True
                     carts.save()
                 else:
                     carts = Cart()
@@ -275,14 +281,15 @@ def addcart(request):
                     carts.good = goods
                     carts.desc = descs
                     carts.number = num
+                    carts.isselect = True
                     carts.save()
             elif sizes:
-                print('---------sizes-------------')
                 carts = carts.filter(size=sizes)
                 if carts.exists():
                     carts = carts.first()
                     num = num + carts.number
                     carts.number = num
+                    carts.isselect = True
                     carts.save()
                 else:
                     carts = Cart()
@@ -290,14 +297,15 @@ def addcart(request):
                     carts.good = goods
                     carts.size = sizes
                     carts.number = num
+                    carts.isselect = True
                     carts.save()
             else:
                 carts = carts.first()
                 num = num + carts.number
                 carts.number = num
+                carts.isselect = True
                 carts.save()
         else:
-            print('-----------------------')
             carts = Cart()
             carts.user = user
             carts.good = goods
@@ -306,10 +314,12 @@ def addcart(request):
             if sizes:
                 carts.size = sizes
             carts.number = num
+            carts.isselect = True
             carts.save()
 
-        carts.number = num
-        carts.save()
+        # carts.number = num
+        # carts.isselect = True
+        # carts.save()
 
         response_data = {
             'status': 1,
@@ -325,8 +335,8 @@ def modicartselect(request):
     userid = cache.get(token)
     user = User.objects.get(pk=userid)
     flag = request.GET.get('flag')
-    desc = request.GET.get('desc')
-    size = request.GET.get('size')
+    desc = request.GET.get('descs')
+    size = request.GET.get('sizess')
     goodsid = request.GET.get('goodsid')
 
     goods = Goods.objects.get(pk=goodsid)
@@ -338,17 +348,16 @@ def modicartselect(request):
         carts = carts.filter(size=size)
 
     carts = carts.first()
-    if flag == 'true':
-        carts.isselect = 1
-    else:
-        carts.isselect = 0
-
-    carts.save()
-
-    response_data = {
-        'status': 1,
-    }
-    return JsonResponse(response_data)
+    try:
+        if flag == 'true':
+            carts.isselect = 1
+        else:
+            carts.isselect = 0
+        print(carts.good.productlongname,carts.desc,carts.isselect)
+        carts.save()
+        return JsonResponse({'status': 1, })
+    except Exception as e:
+        return JsonResponse({'status': -1, })
 
 
 def modicartnum(request):
@@ -370,16 +379,105 @@ def modicartnum(request):
         carts = carts.filter(size=size)
     carts = carts.first()
 
-    if op == 1:
-        num = carts.number + 1
-        carts.number = num
-        carts.save()
-    elif op == 0:
-        if carts.number <= 1:
-            carts.number = 1
-            carts.save()
-        else:
-            num = carts.number - 1
+    try:
+        if op == 1:
+            num = carts.number + 1
             carts.number = num
             carts.save()
-    return JsonResponse({'status':1,'num':carts.number})
+        elif op == 0:
+            if carts.number <= 1:
+                carts.number = 1
+                carts.save()
+            else:
+                num = carts.number - 1
+                carts.number = num
+                carts.save()
+        return JsonResponse({'status': 1, 'num': carts.number})
+    except Exception as e:
+        return JsonResponse({'status': -1, 'num': carts.number})
+
+
+def delselectcart(request):
+    token = request.session.get('token')
+    userid = cache.get(token)
+    user = User.objects.get(pk=userid)
+    desc = request.GET.get('descs')
+    size = request.GET.get('sizess')
+    goodsid = request.GET.get('goodsid')
+
+    goods = Goods.objects.get(pk=goodsid)
+    carts = Cart.objects.filter(isdelete=False).filter(user=user).filter(good=goods)
+    if desc:
+        carts = carts.filter(desc=desc)
+    if size:
+        carts = carts.filter(size=size)
+
+    try:
+        carts = carts.first()
+        carts.isdelete = 1
+        carts.save()
+        return JsonResponse({'status': 1})
+    except Exception as e:
+        return JsonResponse({'status': -1})
+
+
+def orderdetail(request,identified):
+    token = request.session.get('token')
+    userid = cache.get(token)
+    user = User.objects.get(pk=userid)
+    order = Order.objects.get(identifier=identified)
+    order_goods = OrderGoods.objects.filter(order=order)
+
+    response_data = {
+        'user': user,
+        'order': order,
+        'order_goods': order_goods,
+    }
+
+    return render(request,'orderdetail.html',context=response_data)
+
+
+def generateorder(request):
+    token = request.session.get('token')
+    userid = cache.get(token)
+    user = User.objects.get(pk=userid)
+
+    goodsid_s = request.GET.get('goodsid_s')
+    desc_s = request.GET.get('descs_s')
+    size_s = request.GET.get('sizess_s')
+    identified = str(request.GET.get('identified'))
+    num_s = request.GET.get('num_s')
+
+    goodsid_list = goodsid_s.split('#')
+    desc_list = desc_s.split('#')
+    size_list = size_s.split('#')
+    num_list = num_s.split('#')
+
+    order = Order()
+    order.identifier = identified
+    order.user = user
+    order.save()
+    for i in range(len(goodsid_list) - 1):
+        order_goods = OrderGoods()
+        goods = Goods.objects.get(pk=goodsid_list[i])
+        order_goods.goods = goods
+        order_goods.order = order
+        order_goods.number = num_list[i]
+        if desc_list[i] == '&':
+            order_goods.desc = ''
+        else:
+            order_goods.desc = desc_list[i]
+        if size_s[i] == '&':
+            order_goods.size = ''
+        else:
+            order_goods.size = size_list[i]
+        order_goods.save()
+
+        carts = Cart.objects.filter(isdelete=False).filter(user=user).filter(good=goods)
+        if desc_list[i] != '&':
+            carts = carts.filter(desc=desc_list[i])
+        if size_list[i] != '&':
+            carts = carts.filter(size=size_list[i])
+        carts.delete()
+
+    return JsonResponse({'status': 1,'identified':identified })

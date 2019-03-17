@@ -18,7 +18,7 @@
         <div class="allrightshow_top">
             <!--1-->
             <span class="allrightshow_top_buycar">
-                <a href="cart.html">
+                <a href="{% url 'pc:cart' %}">
                     <span class="allrightshow_top_buycar_s1">
 
                     </span>
@@ -108,10 +108,22 @@
                         <a href="{% url 'pc:cart' %}" class="head_top_right_a1">
                             <i class="head_top_right_a1_i"></i>
                             <span class="head_top_right_a1_s1">购物车</span>
-                            <b class="head_top_right_a1_s2">0</b>
+                            <b class="head_top_right_a1_s2">
+                                {% if cartscount %}
+                                    {{ cartscount }}
+                                {% else %}
+                                    0
+                                {% endif %}
+                            </b>
                         </a>
                         <div class="head_top_right_go">
-                            <p>您还没有购买任何商品，快去挑选把！</p>
+                            {% if cartscount == 0 %}
+                                <p>您还没有购买任何商品，快去挑选把！</p>
+                            {% else %}
+                                {% for cart in carts %}
+                                    <p>{{ cart.good.productlongname }}</p>
+                                {% endfor %}
+                            {% endif %}
                         </div>
                     </div>
 
