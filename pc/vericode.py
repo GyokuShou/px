@@ -7,7 +7,7 @@ from px.settings import BASE_DIR
 
 
 class Vericode():
-    def __init__(self,width=130,height=38,size=4):
+    def __init__(self):
         """
         def getvericode(request):
             vc = Vericode([width],[height],[size])
@@ -16,9 +16,9 @@ class Vericode():
             response.set_cookie('vericode',code,path='/')
             return response
         """
-        self.width = width
-        self.height = height
-        self.size = size
+        self.width = 130
+        self.height = 38
+        self.size = 4
         self.pen = None
         self.__code = ""
 
@@ -49,7 +49,7 @@ class Vericode():
         return (res,self.__code)
 
     def __draw_code(self):
-        font_path = os.path.join(BASE_DIR,'px/fonts/TektonPro-Bold.otf')
+        font_path = os.path.join(BASE_DIR,'static/fonts/TektonPro-Bold.otf')
         code_font = ImageFont.truetype(font_path,24,encoding="utf-8")
         for i in range(self.size):
             x = 10 + randint(self.height // 25 * 3,self.height // 15 * 3) + self.width // self.size - self.height // 5 * 3 + i * (self.width - 20) // self.size

@@ -74,6 +74,11 @@ $(function(){
        $('#sp-vericode').html('请输入验证码');
     });
     $('#vericode').blur(function(){
+        if($(this).val()==''){
+            $('#sp-vericode').removeClass().addClass('v-info');
+            $('#sp-vericode').html('请输入验证码');
+            return
+        }
         var vericode = $(this).val();
         var vc = $.cookie('revericode');
         if(vc.toLowerCase() == vericode.toLowerCase()){

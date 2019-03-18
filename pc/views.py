@@ -122,14 +122,19 @@ def login(request):
             page = request.COOKIES.get('page')
             cartpage= request.COOKIES.get('cartpage')
             gotoorderlist = request.COOKIES.get('gotoorderlist')
+
             if page:
                 response = redirect('pc:jump')
                 response.set_cookie('user', token, max_age=60 * 60 * 24 * 3)
                 return response
             if cartpage:
-                return render(request,'cart.html')
+                response = render(request,'cart.html')
+                response.set_cookie('user', token, max_age=60 * 60 * 24 * 3)
+                return response
             if gotoorderlist:
-                return redirect('pc:orderlist')
+                response = redirect('pc:orderlist')
+                response.set_cookie('user', token, max_age=60 * 60 * 24 * 3)
+                return response
 
 
             response = redirect('pc:index')
@@ -145,7 +150,12 @@ def jump(request):
 
 def getvericode(request):
     vc = Vericode()
-    img,code = vc.create_img()
+    # img,code = vc.create_img()
+
+    retu = vc.create_img()
+    img = retu[0]
+    code = retu[1]
+
     response = HttpResponse(img,'image/png')
     response.set_cookie('revericode',code,path='/register/')
     return response
@@ -497,7 +507,7 @@ def orderlist(request):
         userid = cache.get(token)
         if userid:
             user = User.objects.get(pk=userid)
-            order = Order.objects.filter(user=user)
+            order = Order.objects.filter(user=user).order_by('-createtime')
             response_data = {'order':order,'user':user}
             return render(request,'orderlist.html',context=response_data)
     return render(request,'login.html')
@@ -508,7 +518,9 @@ def returnurl(request):
 
 @csrf_exempt
 def appnotify(request):
+    print('--------------appnotify----------------')
     if request.method == 'POST':
+        print('-----------post-------------------')
         body_str = request.body.decode('utf-8')
         post_data = parse_qs(body_str)
         post_dic = {}
@@ -517,6 +529,7 @@ def appnotify(request):
 
         out_trade_no = post_dic['out_trade_no']
         Order.objects.filter(identifier=out_trade_no).update(status=1)
+
 
     print('success')
     return JsonResponse({'msg': 'success'})
@@ -534,6 +547,7 @@ def pay(request):
         subject='我，秦始皇，打钱',
         out_trade_no=order.identifier,
         total_amount=str(sum),
+        # return_url="http://localhost:8006/returnurl/",
         return_url="http://203.195.236.100/returnurl/",
     )
 

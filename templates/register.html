@@ -98,6 +98,7 @@
     var oImgVC = document.getElementById('vc-img');
     {#var oA = document.getElementById('getvc');#}
     oInputVC.onclick = function(){
+        console.log('23333');
         if(flag == true){
             oImgVC.src = {% url 'pc:getvericode' %}
                 {#oA.innerText=' 换一张';#}
