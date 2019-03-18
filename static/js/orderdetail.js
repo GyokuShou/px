@@ -11,3 +11,19 @@ $(function(){
     });
     $('.right h2 span').html(sum);
 });
+
+$(function(){
+    $('#alipay').click(function(){
+        requset_data = {
+            'orderid': $(this).attr('data-order'),
+        };
+        $.get('/pay/',requset_data,function(response){
+            if(response.status==1){
+                window.open(response.alipayurl,'_self');
+            }
+            else {
+                alert('error')
+            }
+        });
+    });
+});

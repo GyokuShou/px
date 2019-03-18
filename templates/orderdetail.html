@@ -41,7 +41,7 @@
         <div class="col-md-5 right">
             {% if order.status == 0 %}
                 <h2>总计：<span></span></h2>
-                <span class="btn btn-primary">确认支付</span>
+                <span class="btn btn-primary" id="alipay" data-order="{{ order.id }}">确认支付</span>
             {% endif %}
         </div>
     </div>

@@ -1,12 +1,16 @@
 import hashlib
 import random
 import time
+from urllib.parse import parse_qs
 
 from django.core.cache import cache
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
 
 # Create your views here.
+from django.views.decorators.csrf import csrf_exempt
+
+from pc.alipay import alipay
 from pc.models import Carousel, User, Type, Goods, GoodsImg, Cart, Order, OrderGoods
 from pc.vericode import Vericode
 
@@ -117,12 +121,16 @@ def login(request):
 
             page = request.COOKIES.get('page')
             cartpage= request.COOKIES.get('cartpage')
+            gotoorderlist = request.COOKIES.get('gotoorderlist')
             if page:
                 response = redirect('pc:jump')
                 response.set_cookie('user', token, max_age=60 * 60 * 24 * 3)
                 return response
             if cartpage:
                 return render(request,'cart.html')
+            if gotoorderlist:
+                return redirect('pc:orderlist')
+
 
             response = redirect('pc:index')
             response.set_cookie('user',token,max_age=60*60*24*3)
@@ -490,6 +498,51 @@ def orderlist(request):
         if userid:
             user = User.objects.get(pk=userid)
             order = Order.objects.filter(user=user)
-            response_data = {'order':order}
+            response_data = {'order':order,'user':user}
             return render(request,'orderlist.html',context=response_data)
     return render(request,'login.html')
+
+
+def returnurl(request):
+    return redirect('pc:index')
+
+@csrf_exempt
+def appnotify(request):
+    if request.method == 'POST':
+        body_str = request.body.decode('utf-8')
+        post_data = parse_qs(body_str)
+        post_dic = {}
+        for k, v in post_data.items():
+            post_dic[k] = v[0]
+
+        out_trade_no = post_dic['out_trade_no']
+        Order.objects.filter(identifier=out_trade_no).update(status=1)
+
+    print('success')
+    return JsonResponse({'msg': 'success'})
+
+
+def pay(request):
+    orderid = request.GET.get('orderid')
+    order = Order.objects.get(pk=orderid)
+    sum = 0
+    for orderGoods in order.ordergoods_set.all():
+        sum += orderGoods.goods.price * orderGoods.number
+
+    # 支付地址信息
+    data = alipay.direct_pay(
+        subject='我，秦始皇，打钱',
+        out_trade_no=order.identifier,
+        total_amount=str(sum),
+        return_url="http://203.195.236.100/returnurl/",
+    )
+
+    alipay_url = "https://openapi.alipaydev.com/gateway.do?{data}".format(data=data)
+
+    response_data = {
+        'msg': '调用接口',
+        'alipayurl': alipay_url,
+        'status': 1
+    }
+
+    return JsonResponse(response_data)

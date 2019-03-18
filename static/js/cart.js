@@ -142,6 +142,8 @@ $(function(){
     //删除选中
     $('#del-chk').click(function(){
         $('.th-cart').each(function(){
+            $(this).attr('data-isselect',$(this).children('.box-chk').children('input').prop('checked'));
+
             if($(this).children('.box-chk').children('input').prop('checked')){
                 var goodsid = $(this).children('.box-chk').children('input').attr('data-goodsid');
                 var descs = $(this).children('.box-desc').html();
@@ -151,8 +153,15 @@ $(function(){
                 if (sizess) requset_data['sizess'] = sizess;
 
                 $.get('/delselectcart/',requset_data,function(response){
-                    if(response.status==-1){
-                        console.log('error');
+                    if(response.status==1){
+
+                        $('.th-cart').each(function(){
+                            if($(this).attr('data-isselect')=='true'){
+                                $(this).css('display','none');
+                                $('#allprice').html(0);
+                            }
+                        });
+
                     }
                 });
             }
@@ -170,8 +179,9 @@ $(function(){
             if (sizess) requset_data['sizess'] = sizess;
 
             $.get('/delselectcart/',requset_data,function(response){
-                if(response.status==-1){
-                    console.log('error');
+                if(response.status==1){
+                    $('.th-cart').css('display','none');
+                    getsum();
                 }
             });
         });

@@ -19,5 +19,32 @@ $(function(){
     $('.sp-allorder').html(allorder);$('.sp-waitpay').html(waitpay);$('.sp-waitsent').html(waitsent);
     $('.sp-waitget').html(waitget);$('.sp-waitview').html(waitview);$('.sp-finish').html(finish);
     $('.sp-errorder').html(errorder);
-    console.log('233')
+    
+    if($('.sp-allorder').html()==0){
+        $('.null-list').html('暂无订单')
+    }
+});
+
+$(function(){
+    $('.allorder').click(function(){
+        $('.detail-box').each(function(){
+            $(this).css('display','block');
+        });
+    });
+    $('.waitpay').click(function(){loop(0);});
+    $('.waitsent').click(function(){loop(1);});
+    $('.waitget').click(function(){loop(2);});
+    $('.waitview').click(function(){loop(3);});
+    $('.finish').click(function(){loop(4);});
+    $('.errorder').click(function(){loop(-1);});
+
+    function loop(status){
+        $('.detail-box').each(function(){
+            $(this).css('display','block');
+            if($(this).children('.status').attr('data-status')!=status){
+                $(this).css('display','none');
+            }
+        });
+    }
+
 });

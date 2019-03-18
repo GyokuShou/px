@@ -14,40 +14,45 @@
 <div class="container offset-top">
     <div class="row">
         <div class="col-md-7">
-            <h2>全部订单</h2>
+            <h2>全部订单/{{ user.name }}</h2>
+            <hr>
+            <h4><a href="{% url 'pc:index' %}">回到首页</a></h4><br>
+            <p class="null-list"></p>
             {% for ord in order %}
-            <div class="media">
-                <div class="media-body detail-box">
-                    <h4 class="media-heading">{{ ord.identifier }}</h4>
-                    <p class="status" data-status="{{ ord.status }}">状态：
-                    {% if  ord.status == 0 %}
-                        未支付
-                    {% elif ord.status == 1 %}
-                        待发货
-                    {% elif ord.status == 2 %}
-                        待收货
-                    {% elif ord.status == 3 %}
-                        待评价
-                    {% elif ord.status == 4 %}
-                        已完成
-                    {% elif ord.status == -1 %}
-                        已过期
-                    {% endif %}
-                    </p>
-                    <p>生成时间：{{ ord.createtime }}</p>
-                    <hr>
-                </div>
-            </div>
-        {% endfor %}
+                <a href="{% url 'pc:orderdetail' ord.identifier %}">
+                    <div class="media">
+                        <div class="media-body detail-box">
+                            <h4 class="media-heading">{{ ord.identifier }}</h4>
+                            <p class="status" data-status="{{ ord.status }}">状态：
+                                {% if  ord.status == 0 %}
+                                    未支付
+                                {% elif ord.status == 1 %}
+                                    待发货
+                                {% elif ord.status == 2 %}
+                                    待收货
+                                {% elif ord.status == 3 %}
+                                    待评价
+                                {% elif ord.status == 4 %}
+                                    已完成
+                                {% elif ord.status == -1 %}
+                                    已过期
+                                {% endif %}
+                            </p>
+                            <p>下单时间：{{ ord.createtime }}</p>
+                            <hr>
+                        </div>
+                    </div>
+                </a>
+            {% endfor %}
         </div>
         <div class="col-md-5">
-            <h4 class="btn btn-success">全部订单：<span class="sp-allorder"></span></h4><br>
-            <h4 class="btn btn-primary">待付款：<span class="sp-waitpay"></span></h4><br>
-            <h4 class="btn btn-primary">待发货：<span class="sp-waitsent"></span></h4><br>
-            <h4 class="btn btn-primary">待收货：<span class="sp-waitget"></span></h4><br>
-            <h4 class="btn btn-primary">待评价：<span class="sp-waitview"></span></h4><br>
-            <h4 class="btn btn-primary">已完成：<span class="sp-finish"></span></h4><br>
-            <h4 class="btn btn-primary">已过期：<span class="sp-errorder"></span></h4><br>
+            <h4 class="btn btn-success allorder">全部订单：<span class="sp-allorder"></span></h4><br>
+            <h4 class="btn btn-primary waitpay">待付款：<span class="sp-waitpay"></span></h4><br>
+            <h4 class="btn btn-primary waitsent">待发货：<span class="sp-waitsent"></span></h4><br>
+            <h4 class="btn btn-primary waitget">待收货：<span class="sp-waitget"></span></h4><br>
+            <h4 class="btn btn-primary waitview">待评价：<span class="sp-waitview"></span></h4><br>
+            <h4 class="btn btn-primary finish">已完成：<span class="sp-finish"></span></h4><br>
+            <h4 class="btn btn-primary errorder">已过期：<span class="sp-errorder"></span></h4><br>
         </div>
     </div>
 </div>
