@@ -216,7 +216,7 @@ def goodsinfo(request,goodsid):
     if goods.productdesc:
         desc_list =goods.productdesc.split('#')
         color_list = {}
-        for item in range(len(desc_list)):
+        for item in range(1,len(desc_list)):
             color_list[desc_list[item]] = item
         response_data['color_list'] = color_list
 

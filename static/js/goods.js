@@ -269,10 +269,11 @@ $(function () {
         var color = $(this).html();
         if (color == '白色') $(this).css('background', '#fff');
         else if (color == '黑色') $(this).css('background', '#000');
-        else if (color == '军绿色') $(this).css('background', '#267226');
+        else if (color == '军绿色') $(this).css('background', '#0c2e13');
         else if (color == '卡其色') $(this).css('background', '#d8d96a');
         else if (color == '红色') $(this).css('background', '#ff0000');
         else if (color == '灰色') $(this).css('background', '#909090');
+        else if (color == '深蓝') $(this).css('background', '#0b0074');
     });
 
     $('.current a').click(function () {
@@ -399,6 +400,12 @@ $(function(){
                     $('.sizebox ul li .i-ok').remove();
                     $('.sizebox ul li:first a').before('<i class="i-ok"></i>');
                     $('.num-text').val(1);
+
+
+
+                    $('#b-cart-count').html(parseInt($('#b-cart-count').html())+1);
+                    $('.login-cart .cartshow .cartboth span').html($('#b-cart-count').html());
+                    $('#i-cart-count').html($('#b-cart-count').html());
 
                     alert('添加成功');
                 }else if(response.status==-1){

@@ -120,9 +120,7 @@
                             {% if cartscount == 0 %}
                                 <p>您还没有购买任何商品，快去挑选把！</p>
                             {% else %}
-                                {% for cart in carts %}
-                                    <p>{{ cart.good.productlongname }}</p>
-                                {% endfor %}
+                                购物车有{{ cartscount }}个商品
                             {% endif %}
                         </div>
                     </div>
