@@ -1,0 +1,70 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/goodslist.css' %}">
+    <title>Title</title>
+</head>
+<body>
+<div class="container top">
+    <div class="row">
+        <p><a href="{% url 'pc:index' %}">首页</a></p>
+        {% if user %}
+            <p>{{ user.name }}&nbsp;&nbsp;&nbsp;<a href="{% url 'pc:logout' %}">注销&nbsp;&nbsp;&nbsp;</a><a
+                    href="{% url 'pc:cart' %}">购物车&nbsp;&nbsp;&nbsp;</a><a href="{% url 'pc:orderlist' %}">订单</a></p>
+        {% else %}
+            <p><a href="{% url 'pc:login' %}">登录&nbsp;&nbsp;&nbsp;</a><a href="{% url 'pc:register' %}">注册</a></p>
+        {% endif %}
+
+        {% for goods in page.object_list %}
+            <div class="col-sm-6 col-md-3">
+                <div class="thumbnail">
+                    <a href="{% url 'pc:goodsinfo' goods.id %}">
+                        <img src="/static/{{ goods.img }}" alt="...">
+                        <div class="caption">
+                            <h3>{{ goods.productlongname }}</h3>
+                            <p>{{ goods.price }}</p>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        {% endfor %}
+
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <nav aria-label="Page navigation">
+            <ul class="pagination">
+                {% if page.has_previous %}
+                    <li><a href="{% url 'pc:goodslist' page.previous_page_number %}" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+                {% endif %}
+                
+                
+                {% for item in page.paginator.page_range %}
+                    <li><a href="{% url 'pc:goodslist' forloop.counter %}">{{ forloop.counter }}</a></li>
+                {% endfor %}
+                
+
+                {% if page.has_next %}
+                    <li><a href="{% url 'pc:goodslist' page.next_page_number %}" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+                {% endif %}
+
+            </ul>
+        </nav>
+    </div>
+</div>
+
+</body>
+</html>
+<script src="{% static 'js/jquery-1.11.3.min.js' %}"></script>
+<script src="{% static 'js/jquery.cookie.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/goodslist.js' %}"></script>

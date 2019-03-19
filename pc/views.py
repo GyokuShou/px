@@ -4,6 +4,7 @@ import time
 from urllib.parse import parse_qs
 
 from django.core.cache import cache
+from django.core.paginator import Paginator
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
 
@@ -227,26 +228,49 @@ def goodsinfo(request,goodsid):
 
 
 def makegoods(request):
-    typeid = 3
-    type = Type.objects.filter(typeid=typeid).first()
-    goods = Goods()
-    goods.productlongname = "斯鑫明 2016秋冬新款男士纯棉夹克男时尚印花修身拼接夹克外套"
-    goods.price = float(str(random.randrange(199,399))+'.00')
-    goods.ftypeid = type
-    goods.ctypeid = int(str(typeid)+str(random.randrange(1000,1003)))
-    goods.productdesc = "#白色#黑色#灰色#深蓝"
-    goods.productsize = "S#M#L#XL"
-    goods.issale = 0
-    goods.storenums = 194
-    goods.review = 0
-    goods.coin = 2
+    for a in range(1,100):
+        typeid = random.choice([1, 2, 3, 4])
+        type = Type.objects.filter(typeid=typeid).first()
+        goods = Goods()
+        if typeid == 1:
+            goods.productlongname = random.choice(['耐克', '阿迪达斯', '李宁', '安踏', '安娜图丽', '宝妮尚丝', '班尼路']) + \
+                                    random.choice(['运动鞋', '帆布鞋', '小白鞋', '高跟鞋', '板鞋', '皮鞋']) + \
+                                    random.choice(['春季新款', '19新款', '夏款', '辣鸡同款', '休闲', '轻奢', '居家']) + \
+                                    str(random.choice('SADFJKLG')) + str(random.randrange(1000, 10000))
+        elif typeid == 2:
+            goods.productlongname = random.choice(['芭菲丽', 'POLO', '美洲野牛', '老人头', '稻草人', '花花公子', 'Zippo']) + \
+                                    random.choice(['单肩', '双肩', '手持', '旅行包', '腰包', '商务包']) + \
+                                    random.choice(['春季新款', '19新款', '夏款', '辣鸡同款', '休闲', '上课', '居家']) + \
+                                    str(random.choice('SADFJKLG')) + str(random.randrange(1000, 10000))
+        elif typeid == 3:
+            goods.productlongname = random.choice(['浪莎', '南极人', '顶呱呱', '恒源祥', '361', '皮尔卡丹', '探路者']) + \
+                                    random.choice(['短袖', '背心', '长袖', '长裙', '短裙', '连衣裙', '睡衣', '针织衫', 'T恤']) + \
+                                    random.choice(['春季新款', '19新款', '夏款', '辣鸡同款', '休闲', '冬款', '居家']) + \
+                                    str(random.choice('SADFJKLG')) + str(random.randrange(100, 1000))
+        elif typeid == 4:
+            goods.productlongname = random.choice(['史努比', '迪士尼', '哈比熊', '米菲', '大黄蜂', '巴布豆', '小骆驼']) + \
+                                    random.choice(['短袖', '背心', '长袖', '长裙', '短裙', '连衣裙', '睡衣', '针织衫', 'T恤']) + \
+                                    random.choice(['春季新款', '19新款', '夏款', '辣鸡同款', '休闲', '冬款']) + \
+                                    str(random.choice('SADFJKLG')) + str(random.randrange(100, 1000))
 
-    goods.save()
+        goods.price = float(str(random.randrange(19, 399)) + '.00')
+        goods.ftypeid = type
+        goods.ctypeid = int(str(typeid) + str(random.randrange(1000, 1003)))
+        goods.productdesc = "#白色#黑色#灰色#深蓝"
+        goods.productsize = "S#M#L#XL"
+        goods.issale = 0
+        goods.storenums = int(random.randrange(20, 300))
+        goods.review = 0
+        goods.coin = int(random.randrange(1, 20))
+        goods.img = 'img/test/1.png'
 
-    goodsimg = GoodsImg()
-    goodsimg.path = 'img/tshirt_man1/1.jpg'
-    goodsimg.goods = goods
-    goodsimg.save()
+        goods.save()
+
+        for i in range(1, 6):
+            goodsimg = GoodsImg()
+            goodsimg.path = 'img/test/' + str(i) + '.png'
+            goodsimg.goods = goods
+            goodsimg.save()
 
     return HttpResponse(goods.productlongname)
 
@@ -560,3 +584,21 @@ def pay(request):
     }
 
     return JsonResponse(response_data)
+
+
+def goodslist(request,num=1):
+    token = request.session.get('token')
+    userid = cache.get(token)
+    user = None
+    if userid:
+        user = User.objects.get(pk=userid)
+
+    # goods = Goods.objects.all()
+    #
+    # return render(request,'goodslist.html',context={'goods':goods,'user':user})
+
+    goods_list = Goods.objects.all()
+    # 数据源，单页数据个数
+    paginator = Paginator(list(goods_list), 12)
+    pageObj = paginator.page(num)
+    return render(request, 'goodslist.html', context={'page': pageObj,'user':user})

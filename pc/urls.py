@@ -19,6 +19,8 @@ urlpatterns = [
     url(r'^generateorder/$', views.generateorder, name='generateorder'),
     url(r'^orderdetail/(?P<identified>\d+)/$', views.orderdetail, name='orderdetail'),
     url(r'^orderlist/$', views.orderlist, name='orderlist'),
+    # url(r'^goodslist/$', views.goodslist, name='goodslist'),
+    url(r'^goodslist/(?P<num>\d+)/$', views.goodslist, name='goodslist'),
 
     url(r'^returnurl/$', views.returnurl, name='returnurl'),
     url(r'^appnotify/$', views.appnotify, name='appnotify'),

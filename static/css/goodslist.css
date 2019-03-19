@@ -1,0 +1,12 @@
+h3{
+    width: 220px;
+    height: 52px;
+    overflow: hidden;
+}
+img{
+    width: 250px;
+    height: 250px;
+}
+.top{
+    margin-top: 70px;
+}

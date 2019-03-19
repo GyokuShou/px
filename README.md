@@ -7,6 +7,9 @@
 
 ### Other Support
 - pymysql
+- django-redis-sessions
+- Pillow
+- pycryptodome
 
 ### Cache
 - DatabaseCache

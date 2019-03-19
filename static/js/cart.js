@@ -78,7 +78,6 @@ $(function(){
         var goodsid = $(this).attr('data-goodsid');
         var descs = $(this).parent().next().next().html();
         var sizess = $(this).parent().next().next().next().html();
-        console.log(descs,sizess)
         requset_data = {
             'flag': flag,
             'goodsid': goodsid,
@@ -87,7 +86,6 @@ $(function(){
         if(sizess) requset_data['sizess']=sizess;
 
         $.get('/modicartselect/',requset_data,function(response){
-            console.log('23333----')
             if(response.status==1){
                 if($(this).attr('checked')){
                     $(this).attr('checked',false);
