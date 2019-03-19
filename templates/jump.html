@@ -17,11 +17,10 @@
 <script>
 $(function(){
     var page = $.cookie('page');
+    $.cookie('page',null,{expires:0,path:'/'});
     {#var uuu = "{" + "% url " + "'pc:goodsinfo'" +' '+ page + " %" + "}";#}
     var uuu = "/goodsinfo/"+ page + '/';
-    console.log(uuu);
     $('a').attr("href",uuu);
-
     setTimeout(function () {
         $('a')[0].click();
     }, 3000);

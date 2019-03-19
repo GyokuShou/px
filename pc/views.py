@@ -127,14 +127,17 @@ def login(request):
             if page:
                 response = redirect('pc:jump')
                 response.set_cookie('user', token, max_age=60 * 60 * 24 * 3)
+                # response.set_cookie('page',None,max_age=0)
                 return response
             if cartpage:
-                response = render(request,'cart.html')
+                response = redirect('pc:cart')
                 response.set_cookie('user', token, max_age=60 * 60 * 24 * 3)
+                response.set_cookie('cartpage',None,max_age=0)
                 return response
             if gotoorderlist:
                 response = redirect('pc:orderlist')
                 response.set_cookie('user', token, max_age=60 * 60 * 24 * 3)
+                response.set_cookie('gotoorderlist',None,max_age=0)
                 return response
 
 
